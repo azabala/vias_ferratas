@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget 
+	id="com.buscamapas.vias_ferratas" 
+	version="1.0.3" 
+	xmlns="http://www.w3.org/ns/widgets" 
+	xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Vias Ferratas</name>
+    <description>
+        Ubicación de las mejores vias ferratas
+    </description>
+    <author email="buscamapas.com@gmail.com" href="http://www.buscamapas.com/rutas-mtb">
+        buscamapas.com - Vias Ferratas 
+    </author>
+
+    <content src="index.html" />
+
+    <access origin="*" />
+    
+    <icon src="res/icon.png" />
+	<gap:splash src="res/splash.png" />
+	<gap:splash src="res/xhdpi.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />
+	
+    <!-- permisos -->
+    <preference name="permissions" value="none"/>	
+  
+      
+</widget>
