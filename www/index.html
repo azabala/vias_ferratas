@@ -20,16 +20,29 @@
 <script src="cordova.js"></script>
 <script src="./js/jquery-2.1.4.min.js"></script>
 <script src="./js/jquery.mobile-1.4.5.min.js"></script>
-
+<script src="./js/initialize.js"></script>
+<script src="./js/i18next-1.7.4.js"></script>
+<script src="./js/buscamapas.js"></script>
 
 <script>
-function device_is_ready(){
-	alert("Dispositivo inicializado");
-}
+<script>
+//google analytics plugin
+var gaPlugin;
+
+//ios no gestiona los enlaces geo:
+var isIOS = false;
+
+var localesPath = 'js/locales/__lng__/__ns__.json';
+
+//admob interstitial counter
+var num_map_views = 0;
+
+
 
 var app = {
 	    // Application Constructor
 	    initialize: function() {
+	    	initTextsAndBgImages();
 	        this.bindEvents();
 	    },
 	   
