@@ -1452,7 +1452,6 @@ function dismiss(){
 function initAd(){
 	
 	if ( window.plugins && window.plugins.AdMob ) {
-	   alert("plugin de admob correctamente cargado");
 	    var ad_units = {
 			android : {
 				banner: 'ca-app-pub-7845495201990236/4239139752',
@@ -1475,7 +1474,6 @@ function initAd(){
 
        window.plugins.AdMob.createBannerView();  
    } 
-   alert("anuncios inicializados");
 }
 
 function shareOnWhatsapp(){
