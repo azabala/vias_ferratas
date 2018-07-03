@@ -436,18 +436,14 @@ function initTextsAndBgImages(){
         		$("#around-you").i18n();
         		$("#see-favs").i18n();
         		
-        		/*
+
         		
         		$('#buscar-mapas').buttonMarkup({ icon: "search" });
         		$('#around-you').buttonMarkup({ icon: "location" });
         		$('#see-favs ').buttonMarkup({ icon: "star" });
 
-        		*/
-        		
-        		
-        		
-        		
-        		
+        	
+        	
         		
 				//search maps
         		$('#home-button').buttonMarkup({ icon: "home" }); 
@@ -473,9 +469,9 @@ function initTextsAndBgImages(){
         		$("#favs-header").i18n();
 
         		//footer buttons
-        		/*
+        		
         		$('#menu-button').buttonMarkup({ icon: "bars" }); 
-        		*/
+        		
         		
         		
         		
