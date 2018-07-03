@@ -77,6 +77,9 @@ var app = {
 };
 
 function init(){
+	window.onerror = function(message, url, lineNumber) {
+	        alert("Error: "+message+" in "+url+" at line "+lineNumber);
+	}
 	initTextsAndBgImages();
 	app.initialize();
 }
