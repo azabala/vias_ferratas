@@ -4,10 +4,12 @@
 	version="1.0.3" 
 	xmlns="http://www.w3.org/ns/widgets" 
 	xmlns:gap="http://phonegap.com/ns/1.0">
+	
     <name>Vias Ferratas</name>
     <description>
         Ubicación de las mejores vias ferratas
     </description>
+    
     <author email="buscamapas.com@gmail.com" href="http://www.buscamapas.com/rutas-mtb">
         buscamapas.com - Vias Ferratas 
     </author>
@@ -21,7 +23,48 @@
 	<gap:splash src="res/xhdpi.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />
 	
     <!-- permisos -->
-    <preference name="permissions" value="none"/>	
+     <preference name="permissions" value="none"/>	
+    
+     <gap:plugin name="cordova-plugin-splashscreen" source="npm" version="4.0.1" />
+     
+     <plugin name="cordova-plugin-whitelist" source="npm"  version="1.3.1" />
+     <allow-navigation href="*" />
+     
+     <gap:plugin name="cordova-plugin-google-analytics" source="npm" spec="0.8.0" />
+     <gap:plugin name="cordova-plugin-admob"  source="npm" spec="3.2.4" />
+     
+     <preference name="orientation" value="default" />
+     <preference name="target-device" value="universal" />
+     <preference name="fullscreen" value="false" />
+     <preference name="webviewbounce" value="true" />
+     <preference name="prerendered-icon" value="true" />
+     <preference name="stay-in-webview" value="false" />
+     <preference name="detect-data-types" value="true" />
+     <preference name="exit-on-suspend" value="false" />
+     <preference name="show-splash-screen-spinner" value="true" />
+     <preference name="auto-hide-splash-screen" value="true" />
+     <preference name="disable-cursor" value="false" />
+     <preference name="android-targetSdkVersion" value="14" />
+     <preference name="android-installLocation" value="auto" />
+     <preference name="SplashScreen" value="splash" />
+     <preference name="SplashScreenDelay" value="3000" />
+     <preference name="ShowSplashScreenSpinner" value="true"/>
+     <preference name="DisallowOverscroll" value="true" />
+     <preference name="SuppressesLongPressGesture" value="true" />
+	
+     <preference name="phonegap-version" value="cli-6.5.0" />
+     
+     <!--
+	 Google Analytics plugin
+	 -->
+	 <feature name="GAPlugin" >
+    	<param name="android-package" value="com.adobe.plugins.GAPlugin"/>
+     </feature>
+     
+     <!--Admob plugin-->
+     <feature name="AdMob">
+         <param name="android-package" value="com.rjfun.cordova.plugin.AdMob"/>
+      </feature>
   
       
 </widget>

@@ -360,7 +360,6 @@ var disqus_config = function () {
 
 function onDeviceReady(){
 	
-	alert("onDeviceReady: dentro");
 	
 	$(document).on("pagebeforecreate", function () {	
 		pagebeforecreate();
@@ -407,8 +406,10 @@ function onDeviceReady(){
 		showDisqusPage();
 	});
 	
-	
 }//onDeviceReady
+
+
+
 
 function initTextsAndBgImages(){	
 	var randombg = Math.floor(Math.random()*3); // 0 to 2
@@ -1449,7 +1450,7 @@ function dismiss(){
 }
 
 function initAd(){
-	alert("inicializando anuncios");
+	
 	if ( window.plugins && window.plugins.AdMob ) {
 	   alert("plugin de admob correctamente cargado");
 	    var ad_units = {
