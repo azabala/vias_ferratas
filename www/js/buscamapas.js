@@ -436,10 +436,19 @@ function initTextsAndBgImages(){
         		$("#around-you").i18n();
         		$("#see-favs").i18n();
         		
+        		/*
+        		
         		$('#buscar-mapas').buttonMarkup({ icon: "search" });
         		$('#around-you').buttonMarkup({ icon: "location" });
         		$('#see-favs ').buttonMarkup({ icon: "star" });
 
+        		*/
+        		
+        		
+        		
+        		
+        		
+        		
 				//search maps
         		$('#home-button').buttonMarkup({ icon: "home" }); 
         		$('#home-button').attr("href", "#main-menu"); 
@@ -464,7 +473,12 @@ function initTextsAndBgImages(){
         		$("#favs-header").i18n();
 
         		//footer buttons
+        		/*
         		$('#menu-button').buttonMarkup({ icon: "bars" }); 
+        		*/
+        		
+        		
+        		
 				$('#menu-button').i18n();
 				$('#menu-button-2').i18n();
 				$('#menu-button-3').i18n();
