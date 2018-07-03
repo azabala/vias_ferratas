@@ -2,23 +2,34 @@
 <html>
 <head>
 <meta charset="utf-8">
-
 <meta name="viewport"
 	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;user-scalable=no;target-densityDpi=device-dpi" />
- <meta http-equiv="Content-Security-Policy" 
+<meta http-equiv="Content-Security-Policy" 
  	content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
-<title>Vias Ferratas</title>
+
+
+<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="./css/jqm-icon-pack-fa.css" />
+
+
+
+
+
+<title>Rutas MTB</title>
 
 <script src="cordova.js"></script>
 <script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/jquery.mobile-1.4.5.min.js"></script>
+
+
 <script>
 function device_is_ready(){
 	alert("Dispositivo inicializado");
 }
+
 var app = {
 	    // Application Constructor
 	    initialize: function() {
-	    	alert("inicializando app");
 	        this.bindEvents();
 	    },
 	   
@@ -26,8 +37,7 @@ var app = {
 	    // Bind any events that are required on startup. Common events are:
 	    // 'load', 'deviceready', 'offline', and 'online'.
 	    bindEvents: function() {
-	    	alert("antes de registrar el deviceready");
-	    	document.addEventListener("deviceready", device_is_ready, false);
+	    	document.addEventListener("deviceready", onDeviceReady, false);
 	    },
 	   
 	    
@@ -39,18 +49,54 @@ var app = {
 	    	alert("Dispositivo inicializado");
 	    },
 	    
-	    
 	};
 </script>
 
 </head>
 
 <body onunload="dismiss();">
- <h1>PhoneGap</h1>
-  <script type="text/javascript">
-  $(document).ready(function() {
-        app.initialize();
-  });
-    </script>
+	<!--  Primera pantalla: menu principal -->
+	
+	 <div data-role="page" id="main-menu">
+			<div data-role="header" data-position="fixed">
+				<img border="0" src="./img/lupa-map-32x32.png" alt="buscamapas.com"
+					style="float: left; display: inline" />
+				<h2 id="app_title" data-i18n>app.app_title</h2>
+	
+				<a href="#menu_panel" data-icon="bars" data-iconpos="notext"
+					id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
+			</div>
+	
+			<div role="main" class="ui-content" id="menu-content">
+				<h3 id="app_welcome" data-i18n>app.welcome</h3>
+				<form>
+					<a class="ui-btn ui-icon-search ui-corner-all ui-shadow"
+						href="#search-maps" data-icon="search" data-role="button"
+						id="buscar-mapas" data-i18n>app.buscar-mapas</a> <a
+						class="ui-btn  ui-icon-location ui-corner-all ui-shadow"
+						data-role="button" id="around-you" href="#maps-around-results"
+						data-i18n>app.around-you</a> <a
+						class="ui-btn  ui-icon-location ui-corner-all ui-shadow"
+						href="#fav-results" data-role="button" id="see-favs" data-i18n>app.favs</a>
+				</form>
+			</div>
+		</div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	  <script type="text/javascript">
+	  $(document).ready(function() {
+	        app.initialize();
+	  });
+	   </script>
 </body>
 </html>
