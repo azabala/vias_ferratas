@@ -437,11 +437,11 @@ function initTextsAndBgImages(){
         		$("#see-favs").i18n();
         		
 
-        		
+        		/*
         		$('#buscar-mapas').buttonMarkup({ icon: "search" });
         		$('#around-you').buttonMarkup({ icon: "location" });
         		$('#see-favs ').buttonMarkup({ icon: "star" });
-
+				*/
         	
         	
         		
