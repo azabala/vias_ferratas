@@ -64,10 +64,18 @@ var app = {
 	    		onDeviceReady();
 	    		initAd();
 				navigator.splashscreen.hide();
+				
+				/*
 				if(window.plugins.gaPlugin){
 					gaPlugin = window.plugins.gaPlugin;
 		    		gaPlugin.init(sucessHandler, errorHandler, "UA-56863485-1", 10);
 				}
+				*/
+				
+				if(window.ga){
+					window.ga.startTrackerWithId('UA-56863485-1', 30);
+				}
+				
 	    	  }catch(err){
 	    		  alert(err.message);
 	    	  }
