@@ -96,8 +96,12 @@ function init(){
 					style="float: left; display: inline" />
 				<h2 id="app_title" data-i18n>app.app_title</h2>
 	
-				<a href="#menu_panel" data-icon="bars" data-iconpos="notext"
-					id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
+				<a href="#menu_panel" 
+					data-icon="bars" 
+					data-iconpos="notext"
+					id="menu-button" 
+					data-theme="c"
+				></a>
 			</div>
 	
 			<div role="main" class="ui-content" id="menu-content">
@@ -128,5 +132,37 @@ function init(){
 				</form>
 			</div>
 		</div>
+		
+		
+		
+		
+	<!-- formulario de busqueda -->
+	<div data-role="page" id="search-maps">
+		<div data-role="header" data-position="fixed">
+			<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
+				data-theme="c" data-rel="back" class="large_button"></a>
+			<h2 id="buscar-mapas-title" data-i18n>app.buscar-mapas</h2>
+			<a href="#menu_panel" 
+				data-icon="bars" 
+				data-iconpos="notext"
+				id="menu-button" 
+				data-theme="c"
+			></a>
+		</div>
+		<div role="main" class="ui-content" id="search-maps-content">
+			<form id="geographic_form">
+				<label for="search-criteria" id="buscar-por-ciudad-title" data-i18n>app.buscar-mapas-descriptive</label>
+				<input type="search" name="search-criteria" id="search-criteria"
+					autocomplete="off" data-inset="true" data-role="autocomplete"
+					placeholder="Madrid (España)" data-clear-btn="true"></input>
+
+				<ul id="autocomplete-results" name="autocomplete-results"
+					data-role='listview' data-inset='true'>
+				</ul>
+				<a href="#search-maps-results" id="search-button"
+					name="search-button" data-role="button" data-theme="b" data-i18n>app.search</a>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
