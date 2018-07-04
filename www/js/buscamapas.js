@@ -432,16 +432,17 @@ function initTextsAndBgImages(){
 	  	  	  	//main menu
         		$("#app_title").i18n();
         		$("#app_welcome").i18n();
+        		
         		$("#buscar-mapas").i18n();
         		$("#around-you").i18n();
         		$("#see-favs").i18n();
         		
 
-        		/*
+        		
         		$('#buscar-mapas').buttonMarkup({ icon: "search" });
         		$('#around-you').buttonMarkup({ icon: "location" });
         		$('#see-favs ').buttonMarkup({ icon: "star" });
-				*/
+				
         	
         	
         		
