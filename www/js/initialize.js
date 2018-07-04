@@ -234,7 +234,9 @@ function pagebeforecreate(){
 }//pagebeforecreate
 
 function initSearchMaps(){
-	gaPlugin.trackPage( sucessHandler, errorHandler, "#search-maps");
+	if(window.ga){
+		window.ga.trackView("#search-maps");
+	}
 
 	$("#search-criteria").on("keyup",function() {
 		var $ul = $("#autocomplete-results");
