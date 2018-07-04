@@ -9,12 +9,14 @@
 
 
 <link rel="stylesheet" type="text/css" href="./css/jquery.mobile-1.4.5.min.css" />
+<!-- 
 <link rel="stylesheet" type="text/css" href="./css/jqm-icon-pack-fa.css" />
+ -->
 <link rel="stylesheet" type="text/css" href="./css/buscamapas.css" />
 
 
 
-<title>Rutas MTB</title>
+<title>Vías Ferratas</title>
 
 <script src="cordova.js"></script>
 <script src="./js/jquery-2.1.4.min.js"></script>
@@ -101,10 +103,16 @@ function init(){
 			<div role="main" class="ui-content" id="menu-content">
 				<h3 id="app_welcome" data-i18n>app.welcome</h3>
 				<form>
+				<!-- 
 					<a class="ui-btn ui-icon-search ui-corner-all ui-shadow"
 						href="#search-maps" data-role="button"
 						data-icon="search"
 						id="buscar-mapas" data-i18n>app.buscar-mapas</a> 
+				-->
+					<a 
+						href="#search-maps" data-role="button"
+						data-icon="search"
+						id="buscar-mapas" data-i18n>app.buscar-mapas</a>
 					<a
 						class="ui-btn  ui-icon-location ui-corner-all ui-shadow"
 						data-role="button" 
