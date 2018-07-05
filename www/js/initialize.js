@@ -392,7 +392,6 @@ function initSearchMapsResults(){
 	 *  mapasen vs mapasconeltexto
 	 * */
 	var query = "mapasen";
-	alert(selectedToponym);
 	if (selectedToponym == "")
 		query = "mapasconeltexto";
 	
@@ -444,6 +443,9 @@ function initSearchMapsResults(){
 	//if(filter.getSortDirection() != DEFAULT_SORT_DIRECTION){
 		aUrl += "/" + filter.getSortDirection();
 	//}
+		
+		
+	alert(aUrl);
 	
 		
 	ajaxRequest = $.ajax({
