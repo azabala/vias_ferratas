@@ -344,15 +344,12 @@ function resetFilters(){
 
 
 function initSearchMapsResults(){	
-	
 	muestraLoading(true);
-	
+	var resultsListView = $('#maps-results');
 	
 	$('#buscar-mapas-result-search').html("<h2>Buscando resultados...</h2><img border=\"0\" src=\"./img/big-ajax-loader.gif\" />"); 
+	resultsListView.html("<li></li>").listview("refresh").trigger("updatelayout");
 	var value  =  $('#search-criteria').val();
-	
-	
-	alert("Buscando "+value);
 	
 	
 	if(filter != null && ! filter.isEmptyFilter()){
@@ -378,10 +375,11 @@ function initSearchMapsResults(){
 		
 	
 	 
-	//var value = $('#search-criteria').val();
-	var resultsListView = $('#maps-results');
 
 	if(value == ""){
+		alert("value cadena vacia");
+		
+		
 		resultsListView.html("<li>"+noSearchString+"</li>").listview("refresh").trigger("updatelayout");
 		return;
 	}else{
@@ -392,6 +390,10 @@ function initSearchMapsResults(){
 	var numrows;
 	
 	if(lastTextSearch.txt == value && lastTextSearch.filter.equals(filter)){
+		
+		
+		alert("estamos repitiendo la ultima busqueda");
+		
 		
 		//Repetimos la ultima busqueda, luego podemos mostrar los mismos resultados y salir
 		muestraLoading(false);
@@ -475,6 +477,9 @@ function initSearchMapsResults(){
 	//if(filter.getSortDirection() != DEFAULT_SORT_DIRECTION){
 	aUrl += "/" + filter.getSortDirection();
 	//}
+	
+	
+	alert(aUrl);
 		
 		
 	ajaxRequest = $.ajax({
@@ -482,6 +487,9 @@ function initSearchMapsResults(){
 	});
 	
 	ajaxRequest.then( function (response) {		
+		alert(response.rows);
+		
+		
 		if(response && response.numrows){
 			numrows = response.numrows;
 			
