@@ -323,7 +323,8 @@ function resetFilters(){
 }
 
 
-function initSearchMapsResults(){
+function initSearchMapsResults(){	
+	
 	var value  =  $('#search-criteria').val();
 	
 	
@@ -384,16 +385,17 @@ function initSearchMapsResults(){
         return;
 	}
 	
-	
-	
 	/*
 	 * 
 	 * 
 	 *  mapasen vs mapasconeltexto
 	 * */
 	var query = "mapasen";
-	if (selectedToponym == "")
+	if (selectedToponym == ""){
 		query = "mapasconeltexto";
+		filter.setSortField("t.LINE_LENGTH");
+		filter.setSortDirection("DESC");
+	}
 	
 
 	lastStart = 0;
@@ -437,15 +439,15 @@ function initSearchMapsResults(){
 	}
 	
 	//if(filter.getSortField() != DEFAULT_SORT_FIELD){
-		aUrl += "/" + filter.getSortField();
+	aUrl += "/" + filter.getSortField();
 	//}
 	
 	//if(filter.getSortDirection() != DEFAULT_SORT_DIRECTION){
-		aUrl += "/" + filter.getSortDirection();
+	aUrl += "/" + filter.getSortDirection();
 	//}
 		
 		
-	alert(aUrl);
+	//alert(aUrl);
 	
 		
 	ajaxRequest = $.ajax({
