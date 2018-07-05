@@ -185,6 +185,35 @@ function init(){
 	</div>
 	
 	
+	<!-- 
+	**********************************************
+	pantalla de resultados de busqueda 
+	**********************************************
+	-->
+	<div data-role="page" id="search-maps-results">
+		<div data-role="header" data-position="fixed">
+			<a href="#search-maps" data-icon="arrow-l" data-iconpos="notext"
+				id="back-button-smr" class="large_button"></a>
+			<h2 id="buscar-mapas-result-title" style="white-space: normal;"
+				data-i18n>app.buscar-mapas-result</h2>
+			
+			<a href="#filters" 
+				id="filter_button"
+				data-role="button" 
+				data-icon="filter"
+				data-theme="c"
+				data-iconpos="notext"
+				class="ui-btn-right large_button"
+				style="background:green"></a> 
+		</div>
+	
+		<div role="main" class="ui-content" id="search-maps-result-content">
+			<div id="buscar-mapas-result-search"></div>
+			<ul id="maps-results" name="maps-results" data-role='listview'
+				data-inset='true'>
+			</ul>
+		</div>
+	</div>
 	
 	
 	
