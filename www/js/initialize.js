@@ -259,8 +259,13 @@ function initSearchMaps(){
 				if(response.toponyms){
 					if(response.toponyms.length > 0){
 						for(var j = 0; j < response.toponyms.length; j++){
+							
+							
 							var toponym = response.toponyms[j].name;
 							var type = response.toponyms[j].type;
+							
+							
+							
 							var img = '';
 							if(type == 'pais'){
 								img = "img/map-icons/country.png";
@@ -270,7 +275,7 @@ function initSearchMaps(){
 								img = "img/map-icons/forest2.png";
 							}
 
-							html += "<li onclick='$(\"#search-criteria\").val($(this).text());$(\"#autocomplete-results\").hide(true)' class=''><a href='#search-maps-results'><img src='"+img+"' class='ui-li-icon' />" + toponym + "</a></li>";
+							html += "<li onclick='selectedToponym='"+toponym+"';$(\"#search-criteria\").val($(this).text());$(\"#autocomplete-results\").hide(true)' class=''><a href='#search-maps-results'><img src='"+img+"' class='ui-li-icon' />" + toponym + "</a></li>";
 
 						}
 						$ul.html( html );
@@ -374,11 +379,24 @@ function initSearchMapsResults(){
         resultsListView.html(newhtml).listview("refresh");
         return;
 	}
+	
+	
+	
+	/*
+	 * 
+	 * 
+	 *  mapasen vs mapasconeltexto
+	 * */
+	var query = "mapasen";
+	alert(selectedToponym);
+	if (selectedToponym == null)
+		query = "mapasconeltexto";
+	
 
 	lastStart = 0;
 	var limit = 10;
-	var aUrl = BACK_END_SERVER+"/mapas_api/mapasen/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
-	
+	//var aUrl = BACK_END_SERVER+"/mapas_api/mapasen/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
+	var aUrl = BACK_END_SERVER+"/mapas_api/"+query+"/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
 	if(filter.getMinLength() > 0){
 		aUrl += "/" + filter.getMinLength();
 	}else{
