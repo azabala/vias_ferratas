@@ -348,18 +348,17 @@ function initSearchMapsResults(){
 	muestraLoading(true);
 	
 	
-	$('#buscar-mapas-result-search').html("<img border=\"0\" src=\"./img/big-ajax-loader.gif\" />"); 
+	$('#buscar-mapas-result-search').html("<h2>Buscando resultados...</h2><img border=\"0\" src=\"./img/big-ajax-loader.gif\" />"); 
 	var value  =  $('#search-criteria').val();
+	
+	
+	alert("Buscando "+value);
 	
 	
 	if(filter != null && ! filter.isEmptyFilter()){
 		
 		//Para las busquedas textuales estamos sobreescribiendo
 		//la ordenacion
-		
-		
-		
-		
 		var filterButton = 	$("#filter_button");
 		filterButton.css("background","red");
 	}else{
