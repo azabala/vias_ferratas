@@ -380,10 +380,6 @@ function initSearchMapsResults(){
 	
 	if(lastTextSearch.txt == value && lastTextSearch.filter.equals(filter)){
 		
-		alert("Repetimos la ultima busqueda");
-		
-		
-		
 		//Repetimos la ultima busqueda, luego podemos mostrar los mismos resultados y salir
 		muestraLoading(false);
 		
@@ -407,11 +403,7 @@ function initSearchMapsResults(){
         return;
 	}
 	
-	/*
-	 * 
-	 * 
-	 *  mapasen vs mapasconeltexto
-	 * */
+
 	var query = "mapasen";
 	if (selectedToponym == ""){
 		query = "mapasconeltexto";
@@ -424,11 +416,6 @@ function initSearchMapsResults(){
 	var limit = 10;
 	//var aUrl = BACK_END_SERVER+"/mapas_api/mapasen/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
 	var aUrl = BACK_END_SERVER+"/mapas_api/"+query+"/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
-	
-	
-	alert(aUrl);
-	
-	
 	
 	
 	
@@ -494,6 +481,8 @@ function initSearchMapsResults(){
 			$('#buscar-mapas-result-search').html(html);
 			mapsArray = [];
 			var index = 0;
+			
+			alert(response.numrows + " resultados devueltos");
 			
             $.each(response.rows, function(index, val) {
 				var friendlyUrl = val.FRIENDLY_URL;
