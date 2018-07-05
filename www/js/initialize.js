@@ -253,6 +253,9 @@ function initSearchMaps(){
 		 if(keycode == '13') {
 			 //El usuario ha pulsado Enter 
 			 $("#autocomplete-results").hide(true);
+			 
+			 alert("cargamos la pagina de resultados para "+value);
+			 
 			 $.mobile.changePage("#search-maps-results", 
 			 { 
 						reloadPage : false, 
@@ -341,6 +344,9 @@ function resetFilters(){
 function initSearchMapsResults(){	
 	
 	var value  =  $('#search-criteria').val();
+	
+	
+	alert("buscamos="+value);
 	
 	
 	if(filter != null && ! filter.isEmptyFilter()){
