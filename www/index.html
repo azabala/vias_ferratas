@@ -156,7 +156,7 @@ function init(){
 	<div data-role="page" id="search-maps">
 		<div data-role="header" data-position="fixed">
 			<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
-				data-theme="c" href="#main-menu" class="large_button"></a>
+				data-theme="c" href="#main-menu" data-rel="back" class="large_button"></a>
 			<h2 id="buscar-mapas-title" data-i18n>app.buscar-mapas</h2>
 			<a href="#menu_panel" 
 				data-icon="bars" 
@@ -214,6 +214,39 @@ function init(){
 	
 	
 	
+	
+	<!-- 
+	**********************************************
+	listado de mapas cerca
+	**********************************************
+	-->
+	<div data-role="page" id="maps-around-results">
+		<div data-role="header" data-position="fixed">
+			<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
+				data-theme="c" data-rel="back" class="large_button"></a>
+			<h2 id="maps-around-result" style="white-space: normal;" data-i18n>app.maps-around-result</h2>
+			<a href="#filters" 
+				id="filter_button_xy"
+				data-role="button" 
+				data-icon="filter"
+				data-theme="c"
+				data-iconpos="notext"
+				class="ui-btn-right large_button"
+				style="background:green"
+				data-i18n></a>
+			
+			 <div style="text-align:center">
+				<span id='toponym'><img src='./img/big-ajax-loader.gif' /> </span>
+			</div>
+		</div>
+		<div role="main" class="ui-content" id="search-maps-result-content">
+			<div id="maps-around-result-search"></div>
+			<ul id="maps-around-results-listview"
+				name="maps-around-results-listview" data-role='listview'
+				data-inset='true'>
+			</ul>
+		</div>
+	</div>
 	
 	
 	
