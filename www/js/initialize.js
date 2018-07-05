@@ -238,13 +238,29 @@ function initSearchMaps(){
 		window.ga.trackView("#search-maps");
 	}
 
-	$("#search-criteria").on("keyup",function() {
+	$("#search-criteria").on("keyup",function(event) {
+		
 		var $ul = $("#autocomplete-results");
 		var $input = $(this);
 		var value = $input.val();
 		var html = "";
 		
 		selectedToponym = "";
+		
+		
+		
+		 var keycode = event.keyCode || event.which;
+		 if(keycode == '13') {
+			 //El usuario ha pulsado Enter 
+			 $("#autocomplete-results").hide(true);
+			 $.mobile.changePage("#search-maps-results", 
+			 { 
+						reloadPage : false, 
+						changeHash : true,
+						pageData: pageData
+			  });
+		 }//if
+		
 		
 		
 		$ul.show();
@@ -447,9 +463,6 @@ function initSearchMapsResults(){
 	//}
 		
 		
-	//alert(aUrl);
-	
-		
 	ajaxRequest = $.ajax({
 		url:aUrl 
 	});
@@ -458,7 +471,7 @@ function initSearchMapsResults(){
 		if(response && response.numrows){
 			numrows = response.numrows;
 			
-			var html = "<h2>"+wehavefound + " " + numrows + " " + mapsandtrails+" "+forthesearch+" '<b><i>"+value+"</i></b></h2>";
+			var html = "<h2>"+wehavefound + " " + numrows + " " + mapsandtrails+" "+forthesearch+" '<b><i>"+value+"</i></b>'</h2>";
 			
 			if(filter != null){
 				html += filter.toString();
