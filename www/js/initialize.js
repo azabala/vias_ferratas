@@ -275,7 +275,7 @@ function initSearchMaps(){
 								img = "img/map-icons/forest2.png";
 							}
 
-							html += "<li onclick='selectedToponym='"+toponym+"';$(\"#search-criteria\").val($(this).text());$(\"#autocomplete-results\").hide(true)' class=''><a href='#search-maps-results'><img src='"+img+"' class='ui-li-icon' />" + toponym + "</a></li>";
+							html += "<li onclick='selectedToponym=\""+toponym+"\";$(\"#search-criteria\").val($(this).text());$(\"#autocomplete-results\").hide(true)' class=''><a href='#search-maps-results'><img src='"+img+"' class='ui-li-icon' />" + toponym + "</a></li>";
 
 						}
 						$ul.html( html );
