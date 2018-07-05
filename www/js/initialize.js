@@ -255,11 +255,14 @@ function initSearchMaps(){
 			 selectedToponym = "";
 			 $("#autocomplete-results").hide(true);
 			 
+			 /*
 			 $.mobile.changePage("#search-maps-results", 
 			 { 
 						reloadPage : false, 
 						changeHash : true
 			  });
+			  */
+			 $(location).attr('href',"#autocomplete-results");
 		 }//if
 		
 		
@@ -342,6 +345,8 @@ function resetFilters(){
 
 function initSearchMapsResults(){	
 	
+	muestraLoading(true);
+	
 	var value  =  $('#search-criteria').val();
 	
 	
@@ -363,7 +368,7 @@ function initSearchMapsResults(){
 	if(ajaxRequest && ajaxRequest.readyState != 4)
 			ajaxRequest.abort();
 		
-	muestraLoading(true);
+	
 	 
 	//var value = $('#search-criteria').val();
 	var resultsListView = $('#maps-results');
@@ -482,7 +487,6 @@ function initSearchMapsResults(){
 			mapsArray = [];
 			var index = 0;
 			
-			alert(response.numrows + " resultados devueltos");
 			
             $.each(response.rows, function(index, val) {
 				var friendlyUrl = val.FRIENDLY_URL;
