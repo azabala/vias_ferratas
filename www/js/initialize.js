@@ -255,13 +255,8 @@ function initSearchMaps(){
 			 selectedToponym = "";
 			 $("#autocomplete-results").hide(true);
 			 
-			 
-			 $.mobile.changePage("#search-maps-results", 
-			 { 
-						reloadPage : false, 
-						changeHash : true
-			  });
-			  
+			 $( "body" ).pagecontainer( "change", "#search-maps-results", { transition: "slide" });
+			
 			 //$(location).attr('href',"#autocomplete-results");
 		 }//if
 		
@@ -287,8 +282,6 @@ function initSearchMaps(){
 							
 							var toponym = response.toponyms[j].name;
 							var type = response.toponyms[j].type;
-							
-							
 							
 							var img = '';
 							if(type == 'pais'){
@@ -348,7 +341,7 @@ function initSearchMapsResults(){
 	var resultsListView = $('#maps-results');
 	
 	$('#buscar-mapas-result-search').html("<h2>Buscando resultados...</h2><img border=\"0\" src=\"./img/big-ajax-loader.gif\" />"); 
-	resultsListView.html("<li></li>").listview("refresh").trigger("updatelayout");
+	resultsListView.html("").listview("refresh").trigger("updatelayout");
 	var value  =  $('#search-criteria').val();
 	
 	
@@ -377,9 +370,6 @@ function initSearchMapsResults(){
 	 
 
 	if(value == ""){
-		alert("value cadena vacia");
-		
-		
 		resultsListView.html("<li>"+noSearchString+"</li>").listview("refresh").trigger("updatelayout");
 		return;
 	}else{
@@ -390,11 +380,6 @@ function initSearchMapsResults(){
 	var numrows;
 	
 	if(lastTextSearch.txt == value && lastTextSearch.filter.equals(filter)){
-		
-		
-		alert("estamos repitiendo la ultima busqueda");
-		
-		
 		//Repetimos la ultima busqueda, luego podemos mostrar los mismos resultados y salir
 		muestraLoading(false);
 		
@@ -479,17 +464,12 @@ function initSearchMapsResults(){
 	//}
 	
 	
-	alert(aUrl);
-		
 		
 	ajaxRequest = $.ajax({
 		url:aUrl 
 	});
 	
 	ajaxRequest.then( function (response) {		
-		alert(response.rows);
-		
-		
 		if(response && response.numrows){
 			numrows = response.numrows;
 			
