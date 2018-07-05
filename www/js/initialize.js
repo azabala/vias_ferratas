@@ -342,7 +342,7 @@ function initSearchMapsResults(){
 	muestraLoading(true);
 	var resultsListView = $('#maps-results');
 	
-	$('#buscar-mapas-result-search').html("<h2>Buscando resultados...</h2><img border=\"0\" src=\"./img/big-ajax-loader.gif\" />"); 
+	$('#buscar-mapas-result-search').html("<h2>Buscando resultados...</h2>"); 
 	resultsListView.html("").listview("refresh").trigger("updatelayout");
 	var value  =  $('#search-criteria').val();
 	
@@ -474,10 +474,6 @@ function initSearchMapsResults(){
 		if(response && response.numrows){
 			numrows = response.numrows;
 			
-			
-			alert("hemos encontrado " + numrows + "resultados");
-			
-			
 			var html = "<h2>"+wehavefound + " " + numrows + " " + mapsandtrails+" "+forthesearch+" '<b><i>"+value+"</i></b>'</h2>";
 			
 			if(filter != null){
@@ -499,7 +495,12 @@ function initSearchMapsResults(){
 				var mapType = val.MAP_TYPE;
 				
 				var pk_id = val.PK_ID;
-				var dist = Math.sqrt(val.Square_Dist) * 111.12;
+				
+				var dist;
+				if(val.Square_Dist != null)
+					dist = Math.sqrt(val.Square_Dist) * 111.12;
+				else
+					dist = "-";
 				var line_length = val.LINE_LENGTH / 1000.0;
 				var producer = val.PRODUCER;
 				
