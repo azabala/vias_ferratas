@@ -419,6 +419,9 @@ function initSearchMapsResults(){
 	
 	
 	
+	alert(aUrl);
+	
+	
 	if(filter.getMinLength() > 0){
 		aUrl += "/" + filter.getMinLength();
 	}else{
@@ -568,6 +571,7 @@ function initSearchMapsResults(){
 		}
 	});
 	ajaxRequest.always( function () {
+		resultsListView.listview("refresh").trigger("updatelayout");
 		muestraLoading(false);
 	});	
 }
