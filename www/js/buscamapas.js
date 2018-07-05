@@ -1,7 +1,7 @@
 var id_feature_map = new Array();
 var xmin, ymin, xmax, ymax;
 
-var selectedToponym = null;
+var selectedToponym = "";
 
 
 function getLang(){

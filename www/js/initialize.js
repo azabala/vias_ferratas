@@ -243,6 +243,10 @@ function initSearchMaps(){
 		var $input = $(this);
 		var value = $input.val();
 		var html = "";
+		
+		selectedToponym = "";
+		
+		
 		$ul.show();
 	    $ul.html( "" );
 	    if (value && value.length > 0) {
@@ -389,7 +393,7 @@ function initSearchMapsResults(){
 	 * */
 	var query = "mapasen";
 	alert(selectedToponym);
-	if (selectedToponym == null)
+	if (selectedToponym == "")
 		query = "mapasconeltexto";
 	
 
