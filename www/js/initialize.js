@@ -353,6 +353,13 @@ function initSearchMapsResults(){
 	
 	
 	if(filter != null && ! filter.isEmptyFilter()){
+		
+		//Para las busquedas textuales estamos sobreescribiendo
+		//la ordenacion
+		
+		
+		
+		
 		var filterButton = 	$("#filter_button");
 		filterButton.css("background","red");
 	}else{
@@ -478,6 +485,10 @@ function initSearchMapsResults(){
 	ajaxRequest.then( function (response) {		
 		if(response && response.numrows){
 			numrows = response.numrows;
+			
+			
+			alert("hemos encontrado " + numrows + "resultados");
+			
 			
 			var html = "<h2>"+wehavefound + " " + numrows + " " + mapsandtrails+" "+forthesearch+" '<b><i>"+value+"</i></b>'</h2>";
 			
