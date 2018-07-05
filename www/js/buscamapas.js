@@ -377,7 +377,8 @@ function onDeviceReady(){
 		showFiltersText();
 	});
 			
-	$(document).on( "pagebeforeshow", "#search-maps-results", function(e,data) {
+	//$(document).on( "pagebeforeshow", "#search-maps-results", function(e,data) {
+	$(document).on( "pageshow", "#search-maps-results", function(e,data) {
 		initSearchMapsResults();
 	});//on( "pagebeforeshow", "#search-maps-results"
 			

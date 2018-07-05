@@ -255,7 +255,7 @@ function initSearchMaps(){
 			 selectedToponym = "";
 			 $("#autocomplete-results").hide(true);
 			 
-			 $( "body" ).pagecontainer( "change", "#search-maps-results", { transition: "slide" });
+			// $( "body" ).pagecontainer( "change", "#search-maps-results", { transition: "slide" });
 			
 			 //$(location).attr('href',"#autocomplete-results");
 		 }//if
@@ -265,10 +265,12 @@ function initSearchMaps(){
 		$ul.show();
 	    $ul.html( "" );
 	    if (value && value.length > 0) {
-		   if(ajaxRequest && ajaxRequest.readyState != 4)
+		   
+	    	if(ajaxRequest && ajaxRequest.readyState != 4)
 				ajaxRequest.abort();
-			$ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
-			$ul.listview( "refresh" );
+			
+		   $ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
+		$ul.listview( "refresh" );
 			var aUrl = BACK_END_SERVER+"/mapas_api/autocomplete/"+value;
 			ajaxRequest = $.ajax({
 				url:aUrl 
@@ -416,10 +418,6 @@ function initSearchMapsResults(){
 	var limit = 10;
 	//var aUrl = BACK_END_SERVER+"/mapas_api/mapasen/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
 	var aUrl = BACK_END_SERVER+"/mapas_api/"+query+"/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
-	
-	
-	
-	alert(aUrl);
 	
 	
 	if(filter.getMinLength() > 0){
