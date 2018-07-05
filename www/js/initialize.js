@@ -252,9 +252,8 @@ function initSearchMaps(){
 		 var keycode = event.keyCode || event.which;
 		 if(keycode == '13') {
 			 //El usuario ha pulsado Enter 
+			 selectedToponym = "";
 			 $("#autocomplete-results").hide(true);
-			 
-			 alert("cargamos la pagina de resultados para "+value);
 			 
 			 $.mobile.changePage("#search-maps-results", 
 			 { 
@@ -346,9 +345,6 @@ function initSearchMapsResults(){
 	var value  =  $('#search-criteria').val();
 	
 	
-	alert("buscamos="+value);
-	
-	
 	if(filter != null && ! filter.isEmptyFilter()){
 		var filterButton = 	$("#filter_button");
 		filterButton.css("background","red");
@@ -383,6 +379,11 @@ function initSearchMapsResults(){
 	var numrows;
 	
 	if(lastTextSearch.txt == value && lastTextSearch.filter.equals(filter)){
+		
+		alert("Repetimos la ultima busqueda");
+		
+		
+		
 		//Repetimos la ultima busqueda, luego podemos mostrar los mismos resultados y salir
 		muestraLoading(false);
 		
@@ -423,6 +424,14 @@ function initSearchMapsResults(){
 	var limit = 10;
 	//var aUrl = BACK_END_SERVER+"/mapas_api/mapasen/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
 	var aUrl = BACK_END_SERVER+"/mapas_api/"+query+"/"+GEO_TABLE+"/es/"+value+"/"+lastStart+"/"+limit;
+	
+	
+	alert(aUrl);
+	
+	
+	
+	
+	
 	if(filter.getMinLength() > 0){
 		aUrl += "/" + filter.getMinLength();
 	}else{
