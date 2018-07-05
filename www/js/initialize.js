@@ -500,7 +500,7 @@ function initSearchMapsResults(){
 				if(val.Square_Dist != null)
 					dist = Math.sqrt(val.Square_Dist) * 111.12;
 				else
-					dist = "-";
+					dist = "0";
 				var line_length = val.LINE_LENGTH / 1000.0;
 				var producer = val.PRODUCER;
 				
