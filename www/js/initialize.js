@@ -256,8 +256,7 @@ function initSearchMaps(){
 			 $.mobile.changePage("#search-maps-results", 
 			 { 
 						reloadPage : false, 
-						changeHash : true,
-						pageData: pageData
+						changeHash : true
 			  });
 		 }//if
 		
