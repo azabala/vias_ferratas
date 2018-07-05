@@ -373,6 +373,7 @@ function onDeviceReady(){
 	});//on( "pageinit", "#search-maps"
 	
 	$(document).on( "pagebeforeshow", "#search-maps", function(e,data) {
+		initSearchMaps();
 		showFiltersText();
 	});
 			

@@ -258,7 +258,7 @@ function initSearchMaps(){
 			 
 			 $.mobile.changePage("#search-maps-results", 
 			 { 
-						reloadPage : true, 
+						reloadPage : false, 
 						changeHash : true
 			  });
 			  
