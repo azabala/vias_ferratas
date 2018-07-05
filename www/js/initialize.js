@@ -255,14 +255,14 @@ function initSearchMaps(){
 			 selectedToponym = "";
 			 $("#autocomplete-results").hide(true);
 			 
-			 /*
+			 
 			 $.mobile.changePage("#search-maps-results", 
 			 { 
-						reloadPage : false, 
+						reloadPage : true, 
 						changeHash : true
 			  });
-			  */
-			 $(location).attr('href',"#autocomplete-results");
+			  
+			 //$(location).attr('href',"#autocomplete-results");
 		 }//if
 		
 		
@@ -347,6 +347,8 @@ function initSearchMapsResults(){
 	
 	muestraLoading(true);
 	
+	
+	$('#buscar-mapas-result-search').html("<img border=\"0\" src=\"./img/big-ajax-loader.gif\" />"); 
 	var value  =  $('#search-criteria').val();
 	
 	
