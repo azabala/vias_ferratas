@@ -255,7 +255,7 @@ function initSearchMaps(){
 			 selectedToponym = "";
 			 $("#autocomplete-results").hide(true);
 			 
-			// $( "body" ).pagecontainer( "change", "#search-maps-results", { transition: "slide" });
+			 $( "body" ).pagecontainer( "change", "#search-maps-results", { transition: "slide" });
 			
 			 //$(location).attr('href',"#autocomplete-results");
 		 }//if

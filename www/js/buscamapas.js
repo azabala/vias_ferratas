@@ -372,16 +372,25 @@ function onDeviceReady(){
 		initSearchMaps();
 	});//on( "pageinit", "#search-maps"
 	
+	
 	$(document).on( "pagebeforeshow", "#search-maps", function(e,data) {
 		//initSearchMaps();
 		showFiltersText();
 	});
+	
+	
 			
 	//$(document).on( "pagebeforeshow", "#search-maps-results", function(e,data) {
 	$(document).on( "pageshow", "#search-maps-results", function(e,data) {
 		initSearchMapsResults();
 	});//on( "pagebeforeshow", "#search-maps-results"
-			
+		
+	
+	
+	
+	
+	
+	
 	$(document).on( "pagebeforeshow", "#fav-results", function(e,data) {
 		favResults();
 	});//on( "pagebeforeshow", "#fav-results"
