@@ -655,6 +655,7 @@ function mapsAroundResults(){
 							dx = nx - parseFloat(x).toFixed(2);
 
 							if(dx == 0 && dy == 0){
+								$.mobile.loading( 'hide' );
   								return;
 							}
 				   		}
