@@ -819,7 +819,12 @@ function mapsAroundResults(){
 	    			$.mobile.loading( 'hide' );
 	    			//alert(error.code+" "+error.message);
 	    			alert("No hemos conseguido localizar tu posición. Activa el GPS del móvil y vuelve a intentarlo más tarde");
-			        return;
+	    			$.mobile.changePage("#main-menu", 
+	    					{ 
+	    					reloadPage : false, 
+	    					changeHash : true
+	    					}
+	    			);
 	             }, 
 		    	 { 
 			    	maximumAge: Infinity, 
