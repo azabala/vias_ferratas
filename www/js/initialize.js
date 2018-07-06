@@ -809,9 +809,10 @@ function mapsAroundResults(){
 			        return;
 	             }, 
 		    	 { 
-			    	maximumAge: 15000, 
-			    	timeout: 10000, 
-			    	enableHighAccuracy:true
+			    	maximumAge: Infinity, 
+			    	timeout: 15000, 
+			    	enableHighAccuracy:false
+			    	//enableHighAccuracy:true
 			      }
 	     );//getCurrentPosition
 	}else{

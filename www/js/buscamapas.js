@@ -391,7 +391,8 @@ function onDeviceReady(){
 		favResults();
 	});//on( "pagebeforeshow", "#fav-results"
 			
-	$(document).on( "pagebeforeshow", "#maps-around-results", function(e,data) {
+	//$(document).on( "pagebeforeshow", "#maps-around-results", function(e,data) {
+	$(document).on( "pageshow", "#maps-around-results", function(e,data) {
 		mapsAroundResults();
 	});//on( "pagebeforeshow", "#maps-around-results"
 
