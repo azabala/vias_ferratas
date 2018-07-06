@@ -616,7 +616,8 @@ function mapsAroundResults(){
 		window.ga.trackView("#maps-around-results");
 	}
 	
-	muestraLoading(true);
+	
+	
 	var limit = 10;
 	var radius = 0.1;
 		
@@ -624,6 +625,16 @@ function mapsAroundResults(){
 	var num_items = resultsListView.children().length;
 
 	if(navigator.geolocation) {
+		
+		$.mobile.loading( 'show', {
+			text: 'Esperando coordenadas GPS',
+			textVisible: true,
+			theme: 'b',
+			html: ''
+		});
+
+		
+		
 	    navigator.geolocation.getCurrentPosition(
   			    function(position) {
 		   			 var x = position.coords.longitude;
@@ -801,23 +812,24 @@ function mapsAroundResults(){
 		   			});//ajax request then
 
 			   		ajaxRequest.always( function () {
-			   				muestraLoading(false);
+			   			$.mobile.loading( 'hide' );
 			   		});	
 	    		}, 
 	    		function(error) {
-	    			alert(error.code+" "+error.message);
+	    			$.mobile.loading( 'hide' );
+	    			//alert(error.code+" "+error.message);
+	    			alert("No hemos conseguido localizar tu posición. Activa el GPS del móvil y vuelve a intentarlo más tarde");
 			        return;
 	             }, 
 		    	 { 
 			    	maximumAge: Infinity, 
-			    	timeout: 15000, 
-			    	enableHighAccuracy:false
-			    	//enableHighAccuracy:true
+			    	timeout: 30000, 
+			    	enableHighAccuracy:true
 			      }
 	     );//getCurrentPosition
 	}else{
 		alert(functionNotSupported);
-	return;
+		return;
 	}//if navigator.geolocation;	
 }
 
