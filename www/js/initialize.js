@@ -576,7 +576,9 @@ function initSearchMapsResults(){
 }
 
 function favResults(){
-	gaPlugin.trackPage( sucessHandler, errorHandler, "#fav-results");
+	if(window.ga){
+		window.ga.trackView("#fav-results");
+	}
 	
 	var favsListView = $('#favs-listview');
 	if(_storage){
@@ -610,7 +612,9 @@ function mapsAroundResults(){
 		filterButton.css("background","green");
 	}
 	
-	gaPlugin.trackPage( sucessHandler, errorHandler, "#maps-around-results");
+	if(window.ga){
+		window.ga.trackView("#maps-around-results");
+	}
 	
 	muestraLoading(true);
 	var limit = 10;
@@ -850,8 +854,11 @@ function showMapPage(){
 	 
 		
 	var page = "#map_page" + "?q=" + url;
-	gaPlugin.trackPage( sucessHandler, errorHandler, page); 
-	 
+	if(window.ga){
+		window.ga.trackView(page);
+	}
+	
+
 	 
  	if(map){
 		if(currentLayer){
@@ -884,8 +891,10 @@ function showMapPage(){
 }
 
 function showMapDescription(){
-	gaPlugin.trackPage( sucessHandler, errorHandler, "#description");
-	  
+	if(window.ga){
+		window.ga.trackView("#description");
+	}
+	
 	$("#map-description").i18n();
 	var description = $('#description-body'); 
 	description.html(data.description);
@@ -923,8 +932,10 @@ function showElevationProfile(){
 
 
 function showDisqusPage(){
-	gaPlugin.trackPage( sucessHandler, errorHandler, "#disqus");
-	  
+	if(window.ga){
+		window.ga.trackView("#disqus");
+	}
+	 
 	title = "";
 	friendly_url = "";
 

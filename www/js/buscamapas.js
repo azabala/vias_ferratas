@@ -387,10 +387,6 @@ function onDeviceReady(){
 		
 	
 	
-	
-	
-	
-	
 	$(document).on( "pagebeforeshow", "#fav-results", function(e,data) {
 		favResults();
 	});//on( "pagebeforeshow", "#fav-results"
