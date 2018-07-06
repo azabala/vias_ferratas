@@ -37,36 +37,22 @@ var GEO_TABLE = 'rutas_mtb';
 
 
 var app = {
-	    // Application Constructor
 	    initialize: function() {
 	        this.bindEvents();
 	    },
 	   
-	    //
-	    // Bind any events that are required on startup. Common events are:
-	    // 'load', 'deviceready', 'offline', and 'online'.
+
 	    bindEvents: function() {
 	    	document.addEventListener("deviceready", this.fired_device_ready, false);
 	    },
 	   
 	    
-	    // deviceready Event Handler
-	    //
-	    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-	    // function, we must explicitly call 'app.receivedEvent(...);'
 	    fired_device_ready: function() {
 	    	try{
 	    		initTextsAndBgImages();
 	    		onDeviceReady();
 	    		initAd();
 				navigator.splashscreen.hide();
-				
-				/*
-				if(window.plugins.gaPlugin){
-					gaPlugin = window.plugins.gaPlugin;
-		    		gaPlugin.init(sucessHandler, errorHandler, "UA-56863485-1", 10);
-				}
-				*/
 				
 				if(window.ga){
 					window.ga.startTrackerWithId('UA-56863485-1', 30);
