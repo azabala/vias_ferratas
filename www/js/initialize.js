@@ -1,7 +1,19 @@
 function pagebeforecreate(){
 	if(txtInitialized)
 		return;
-
+	
+	//boton volver de la pantalla de resultados de busqueda
+	$("#back-button-smr").on('vclick', function(){
+		
+		$.mobile.changePage("#main-menu", 
+				{ 
+				reloadPage : false, 
+				changeHash : true,
+				}
+		);
+	});
+	
+	
    	$("#whatsapp").on('vclick',function(){
 	   shareOnWhatsapp();
     });
