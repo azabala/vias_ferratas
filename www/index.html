@@ -249,10 +249,86 @@ function init(){
 				id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
 		</div>
 		<div role="main" class="ui-content" id="favs-result-content">
-			<!-- <h2 id="maps-around-result-search"></h2>-->
+			<h2 id="favs-title"></h2>
 			<ul id="favs-listview" name="favs-listview" data-role='listview'
 				data-inset='true'>
 			</ul>
+		</div>
+	</div>
+	
+	
+	<!-- 
+	**********************************************
+	pantalla de mapa
+	**********************************************
+	-->
+	
+	<div data-role="page" id="map_page">
+		<div data-role="header" data-position="fixed" data-fullscreen="true">
+			<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
+				data-theme="c" data-rel="back" class="large_button"></a>
+			<h2 id="map-title" style="white-space: normal;"></h2>
+			<a href="#map_panel" data-icon="bars" data-iconpos="notext"
+				id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
+		</div>
+		<div role="main" class="ui-content"
+			style="position: absolute; top: 0px; right: 0; bottom: 0px; left: 0; padding: 0 !important;">
+			<div id="map_container"></div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-fullscreen="true">
+			<div>
+				<a href="#description" 
+					id="map_info"
+					data-role="button" 
+					data-icon="info"
+					data-inline="true"	
+					data-iconpos="notext"
+					class="large_button">
+				</a> 
+				
+				<a href="#disqus" 
+					id="map_disqus"
+					data-role="button" 
+					data-icon="comments"
+					data-inline="true"
+						data-iconpos="notext"
+					class="large_button">
+				</a>
+				<a href="#" 
+					data-role="button" 
+					data-icon="star"
+					id="fav"
+					data-inline="true"
+						data-iconpos="notext"
+					class="large_button">
+				</a> 
+				<a href="#" 
+					data-role="button"
+					data-icon="arrow-d"  
+					id="download"
+					data-inline="true"
+					data-iconpos="notext"
+					class="large_button">
+				</a> 
+				
+				<a href="#" 
+					data-role="button"
+					id="whatsapp_button"
+					data-inline="true"
+					data-iconpos="notext"
+					class="large_button"
+					data-icon="whatsapp"
+				></a>
+				
+				<a href="#" 
+					data-role="button"
+					id="profile_button"
+					data-inline="true"
+					data-iconpos="notext"
+					class="large_button"
+					data-icon="profile"
+				></a>
+			</div>
 		</div>
 	</div>
 	

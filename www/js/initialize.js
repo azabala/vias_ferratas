@@ -609,6 +609,8 @@ function favResults(){
 			}else{
 				favsListView .html("<li>"+nofavs+"</li>").listview("refresh").trigger("updatelayout");
 			}
+		}else{
+			$('#favs-title').html("<h2>No has guardado rutas en tus favoritos</h2>");
 		}
 	}else{
 		favsListView .html("<li>"+functionNotSupported+"</li>").listview("refresh").trigger("updatelayout");
