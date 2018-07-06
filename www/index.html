@@ -142,7 +142,7 @@ function init(){
 	<div data-role="page" id="search-maps">
 		<div data-role="header" data-position="fixed">
 			<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
-				data-theme="c" href="#main-menu" data-rel="back" class="large_button"></a>
+				data-theme="c"  data-rel="back" class="large_button"></a>
 			<h2 id="buscar-mapas-title" data-i18n>app.buscar-mapas</h2>
 			<a href="#menu_panel" 
 				data-icon="bars" 
@@ -235,6 +235,26 @@ function init(){
 	
 	
 	
+	<!-- 
+	**********************************************
+	pantalla de favoritos
+	**********************************************
+	-->
+	<div data-role="page" id="fav-results">
+		<div data-role="header" data-position="fixed">
+			<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
+				data-theme="c" data-rel="back" class="large_button"></a>
+			<h2 id="favs-header" style="white-space: normal;" data-i18n>app.favs</h2>
+			<a href="#menu_panel" data-icon="bars" data-iconpos="notext"
+				id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
+		</div>
+		<div role="main" class="ui-content" id="favs-result-content">
+			<!-- <h2 id="maps-around-result-search"></h2>-->
+			<ul id="favs-listview" name="favs-listview" data-role='listview'
+				data-inset='true'>
+			</ul>
+		</div>
+	</div>
 	
 	
 </body>

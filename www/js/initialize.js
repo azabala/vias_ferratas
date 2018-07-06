@@ -3,7 +3,7 @@ function pagebeforecreate(){
 		return;
 	
 	//boton volver de la pantalla de resultados de busqueda
-	$("#back-button-smr").on('vclick', function(){
+	$("#back-button").on('vclick', function(){
 		
 		$.mobile.changePage("#main-menu", 
 				{ 
@@ -11,6 +11,7 @@ function pagebeforecreate(){
 				changeHash : true,
 				}
 		);
+		return false;
 	});
 	
 	
