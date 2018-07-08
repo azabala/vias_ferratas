@@ -1303,7 +1303,7 @@ function showMap(url, type){
 
 	if(! map){
 		map = L.map('map_container');
-		L.tileLayer('http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png', {
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; OpenStreetMap',
 			maxZoom: 18
 		}).addTo(map);
