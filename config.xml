@@ -30,7 +30,7 @@
      <gap:plugin name="cordova-plugin-splashscreen" source="npm" version="4.0.1" />
      
      
-     <gap:plugin name="cordova-plugin-file" source="npm"  spec="5.0.0" />
+     <gap:plugin name="cordova-plugin-file" source="npm"  spec="4.0.0" />
      <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="1.6.3" />
      <gap:plugin name="cordova-plugin-file-opener2" source="npm" />
      
@@ -62,10 +62,11 @@
      <preference name="DisallowOverscroll" value="true" />
      <preference name="SuppressesLongPressGesture" value="true" />
      
-	<!--
      <preference name="phonegap-version" value="cli-6.5.0" />
+	<!--
+      <preference name="phonegap-version" value="cli-7.1.0" />
      -->
-     <preference name="phonegap-version" value="cli-7.1.0" />
+    
      
      <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 	 <preference name="AndroidExtraFilesystems" value="files,cache, sdcard, cache-external, files-external" />
