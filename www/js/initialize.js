@@ -74,6 +74,7 @@ function pagebeforecreate(){
 	   var uri = encodeURI(BACK_END_SERVER+"/mapas_api/getkml/"+GEO_TABLE+"/"+data.friendly_url);
 	   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
 			    function onFileSystemSuccess(fileSystem) {
+		   
 				   $.mobile.loading( 'show', {
 						text: downloading+" "+data.friendly_url,
 						textVisible: true,
@@ -82,7 +83,8 @@ function pagebeforecreate(){
 					});
 				
 				   //store = cordova.file.externalDataDirectory + "/kml/";
-				   store = "cdvfile://localhost/persistent/kml/";
+				   //store = "cdvfile://localhost/persistent/kml/";
+				   store = "cdvfile://localhost/persistent/Download/";
 				   window.resolveLocalFileSystemURL(store + data.friendly_url, function(){
 					   alert(data.friendly_url+" "+already_exists);
 					   $.mobile.loading( 'hide' );
