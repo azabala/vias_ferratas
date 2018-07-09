@@ -5,7 +5,7 @@
 <meta name="viewport"
 	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0;user-scalable=no;target-densityDpi=device-dpi" />
 <meta http-equiv="Content-Security-Policy" 
- 	content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *;script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+ 	content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
  	
 <!-- 
 <meta http-equiv="Content-Security-Policy" 
@@ -517,8 +517,6 @@ function init(){
 </div>
 
 
-
-
 <div data-role="page" id="hard_index" data-close-btn="right" data-dialog="true">
 	<div data-role="header">
 		<h1 id="more_about_hard_idx_title" data-i18n>app.more_about_difficulty_index</h1>
@@ -583,16 +581,71 @@ function init(){
 	
 	
 	
+<!-- 
+	**********************************************
+	Filtros
+	**********************************************
+	-->
+<div data-role="page" id="filters">
+	<div data-role="header" data-position="fixed">
+		<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
+			data-theme="c" data-rel="back" class="large_button"></a>
+		<h2 id="filters-title" data-i18n>app.filters</h2>
+		<a href="#menu_panel" data-icon="bars" data-iconpos="notext"
+			id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
+	</div>
+
+	<div role="main" class="ui-content" id="filters-content">
+		<h3 id="filters-h3" data-i18n>app.filters</h3>
+		<div data-role="rangeslider">
+			<label id="filter-distance-1" for="range-distance-min" data-i18n>app.filter_distance</label>
+			<input name="range-distance-min" id="range-distance-min" min="0" max="150" value="0" type="range" style="display:none" data-show-value="true" step="1"/>
+			<label id="filter-distance-2" for="range-distance-max" data-i18n>app.filter_distance</label>
+			<input name="range-distance-max" id="range-distance-max" min="0" max="150" value="150" type="range" style="display:none" data-show-value="true" step="1"/>
+		</div>
+		
+		<div data-role="rangeslider">
+			<label id="filter-desnivel-1" for="range-desnivel-min" data-i18n>app.filter_desnivel</label>
+			<input name="range-desnivel-min" id="range-desnivel-min" min="0" max="1200" value="0" type="range"  style="display:none" data-show-value="true" step="1" />
+			<label id="filter-desnivel-2" for="range-desnivel-max" data-i18n>app.filter_desnivel</label>
+			<input name="range-desnivel-max" id="range-desnivel-max" min="0" max="1200" value="1200" type="range"  style="display:none" data-show-value="true" step="1" />
+		</div>
+		
+		<div data-role="rangeslider">
+			<label id="filter-dureza-1" for="range-dureza-min" data-i18n>app.filter_dureza</label>
+			<input name="range-dureza-min" id="range-dureza-min" min="0" max="110" value="0" type="range"  style="display:none" data-show-value="true" step="1" />
+			<label id="filter-dureza-2" for="range-dureza-max" data-i18n>app.filter_dureza</label>
+			<input name="range-dureza-max" id="range-dureza-max" min="0" max="110" value="110" type="range"  style="display:none" data-show-value="true" step="1"/>
+		</div>
+		
+		<h3 id="sort-h3" data-i18n>app.sort</h3>
+			<div data-role="fieldcontain">
+			    <fieldset data-role="controlgroup" data-type="horizontal">
+			         	<input type="radio" name="sorts" id="dist_sort" value="Square_Dist" checked />
+			         	<label id="sort-dist" for="dist_sort" data-i18n>app.sort_distance</label>
+			         	<input type="radio" name="sorts" id="length_sort" value="LINE_LENGTH"   />
+			         	<label id="sort-length" for="length_sort" data-i18n>app.sort_length</label>
+			         	<input type="radio" name="sorts" id="hard_sort" value="HARD_INDEX"  />
+			         	<label id="sort-hard" for="hard_sort" data-i18n>app.sort_difficult</label>
+			         	<input type="radio" name="sorts" id="desnivel_sort" value="DESNIVEL"  />
+			         	<label id="sort-desnivel" for="desnivel_sort" data-i18n>app.sort_desnivel</label>
+			    </fieldset>
+			    
+			    <div data-role="fieldcontain">
+			    <fieldset data-role="controlgroup" data-type="horizontal">
+			         	<input type="radio" name="direction" id="asc" value="ASC"  checked/>
+			         	<label id="sort-asc" for="asc" data-i18n>app.asc</label>
+			         	
+			         	<input type="radio" name="direction" id="desc" value="DESC"  />
+			         	<label id="sort-desc" for="desc" data-i18n>app.desc</label>
+			    </fieldset>
+			</div>	
+	</div>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<div data-role="footer" class="ui-bar">
+			<a 	id="filter-ok" data-role="button" data-rel="back" data-i18n>app.OK</a>
+			<a 	id="filter-delete" data-role="button"  data-i18n>app.DELETE_FILTERS</a>
+	</div>	
+</div>
 </body>
 </html>
