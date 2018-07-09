@@ -33,6 +33,7 @@
      <gap:plugin name="cordova-plugin-file" source="npm"  spec="4.0.0" />
      <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="1.6.3" />
      <gap:plugin name="cordova-plugin-file-opener2" source="npm" />
+      <gap:plugin name="cmt-cordova-plugin-webintent"  source="npm" />
      
           
      
