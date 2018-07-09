@@ -76,6 +76,9 @@
     "order_by_difficulty":"Ordered by difficulty. ",
     "order_by_ramp":"Ordered by ramp. ",
     "asc_direction":"Ascending.",
-    "desc_direction":"Descending."
+    "desc_direction":"Descending.",
+    "Downloading":"Downloading track ",
+    "Already_exists":" was downloaded yet ",
+    "download_finished":" has been downloaded"
   }
 } 

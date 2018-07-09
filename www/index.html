@@ -374,5 +374,221 @@ function init(){
 			</div>
 		</div>
 	</div>
+	
+	
+	<!-- 
+	**********************************************
+	pantalla de informacion sobre la ruta
+	**********************************************
+	-->
+	<div data-role="page" id="description" data-close-btn="right"
+		data-dialog="true">
+		<div data-role="header">
+			<h1 id="map-description" data-i18n>app.description</h1>
+		</div>
+		<div role="main" class="ui-content" id="description">
+			<h3 id="description-body"></h3>
+		</div>
+	</div>
+	
+	<!-- 
+	**********************************************
+	Perfil longitudinal y estadisticas sobre la ruta
+	**********************************************
+	-->
+	
+<div data-role="page" id="elevation_profile" data-close-btn="right" data-dialog="true">
+	<div data-role="header">
+		<h1 id="elevation_profile_title" data-i18n>app.elevation_profile</h1>
+	</div>
+	<div role="main" class="ui-content" id="description">
+		<div id="chart_id"></div>
+			
+		<div class="ui-grid-a">
+			<div class="ui-block-a ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			    <h3 id="str_trails_length" data-i18n>app.trails_length</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="length"></p>
+			  </div>
+			</div>
+			<div class="ui-block-b ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			    <h3 id="str_difficulty_index" data-i18n>app.Difficulty Index</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="hard_index"></p>
+			  </div>
+			</div>
+		</div>	
+		
+		
+		<div class="ui-corner-all custom-corners">
+			  <div class="ui-body ui-body-a">
+			  	<h4 id="more_about_hard_idx_title_2"></h4>
+			  </div>
+		</div>	
+		
+		<div class="ui-grid-a">
+			<div class="ui-block-a ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			    <h3 id="str_ramp" data-i18n>app.ramp</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="ramp"></p>
+			  </div>
+			</div>
+			
+			<div class="ui-block-b ui-corner-all custom-corners">
+		  <div class="ui-bar ui-bar-a">
+		  <h3 id="str_hmedia" data-i18n>app.height_avg</h3>
+		  </div>
+		  <div class="ui-body ui-body-a">
+		    <p id="hmedia"></p>
+		  </div>
+		</div>
+		</div>
+		
+		<div class="ui-grid-a">
+			<div class="ui-block-a ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			   <h3 id="str_hmax" data-i18n>app.height_max</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="hmax"></p>
+			  </div>
+			</div>
+			
+			<div class="ui-block-b ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			   <h3 id="str_hmin" data-i18n>app.height_min</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="hmin"></p>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a">
+			<div class="ui-block-a ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			  <h3 id="str_maxaspect" data-i18n>app.slope_max</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="max_aspect"></p>
+			  </div>
+			</div>
+			<div class="ui-block-b ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			  <h3 id="str_minaspect" data-i18n>app.slope_min</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="min_aspect"></p>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a">
+			<div class="ui-block-a ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			  <h3 id="str_avgaspectup" data-i18n>app.slope_avg_up</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="avg_aspect_up"></p>
+			  </div>
+			</div>	
+			
+			<div class="ui-block-b ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			  <h3 id="str_avgaspectdown" data-i18n>app.slope_avg_down</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+			    <p id="avg_aspect_down"></p>
+			   </div>
+			  </div>
+			</div>	
+		</div>
+	</div>
+</div>
+
+
+
+
+<div data-role="page" id="hard_index" data-close-btn="right" data-dialog="true">
+	<div data-role="header">
+		<h1 id="more_about_hard_idx_title" data-i18n>app.more_about_difficulty_index</h1>
+	</div>
+	<div role="main" class="ui-content" id="description">
+		<div class="ui-corner-all custom-corners">
+			  <div class="ui-bar ui-bar-a">
+			  	<h3 id="more_about_hard_idx_title_2" data-i18n>app.more_about_difficulty_index</h3>
+			  </div>
+			  <div class="ui-body ui-body-a">
+				  <p>
+					<img src="img/hard_index.jpg">
+					<div id="difficulty_index_description_1" data-i18n>app.difficulty_index_description_1</div>
+					<div id="difficulty_index_description_2" data-i18n>app.difficulty_index_description_2</div>
+					<div id="difficulty_index_description_3" data-i18n>app.difficulty_index_description_3</div>
+				  </p>
+			  </div>
+		</div>	
+	</div>
+</div>
+
+
+<!-- disqus -->
+<div data-role="page" id="disqus">
+	<div data-role="header" data-position="fixed">
+		<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
+			data-theme="c" data-rel="back" class="large_button"></a>
+		<h2>
+			<div id="map-to-disqus"></div>
+			<div id="comment-the-map" style="white-space: normal;" data-i18n>app.comment-the-map</div>
+		</h2>
+		<a href="#menu_panel" data-icon="bars" data-iconpos="notext"
+			id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
+	</div>
+	<div role="main" class="ui-content">
+		<div id="disqus_thread">
+		<span><div style="text-align:center"><img src='./img/big-ajax-loader.gif' /></div></span>
+		</div>
+	</div>
+</div>
+
+
+
+	
+	<!--  about us -->
+	<div data-role="page" id="about_us">
+		<div data-role="header" data-position="fixed">
+			<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
+				data-theme="c" data-rel="back" class="large_button"></a>
+			<h2 id="about_us_header" data-i18n>app.about</h2>
+			<a href="#menu_panel" data-icon="bars" data-iconpos="notext"
+				id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
+		</div>
+		<div role="main" class="ui-content">
+			<p style="text-align:justify" id="about_us_content" data-i18n>app.about_content</p>
+			<ul data-role="listview" data-inset="true">
+					<li><a href="http://www.twitter.com/buscamapas">@buscamapas</a></li>
+					<li><a href="mailto:buscamapas.com@gmail.com" data-icon="mail">buscamapas.com <i>arroba</i> gmail.com</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>
