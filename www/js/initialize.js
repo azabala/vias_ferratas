@@ -19,8 +19,10 @@ function pagebeforecreate(){
 	   shareOnWhatsapp();
     });
 
-   	$("#whatsapp2").on('vclick',function(){  
-	    gaPlugin.trackEvent( sucessHandler, errorHandler, "Button", "Click", "whatsapp_resto_app", 1);
+   	$("#whatsapp2").on('vclick',function(){ 
+   		if(window.ga){
+   			window.ga.trackView("#WhatsApp-Share");
+   		}
 	    var msg = downloadHikingTrailsAt+" http://www.buscamapas.com/"+appTitle;
 	    var msgurl = encodeURIComponent(msg);
 	    try{
@@ -62,8 +64,12 @@ function pagebeforecreate(){
 
 
    $("#download").on('vclick',function(){ 
-	   gaPlugin.trackEvent( sucessHandler, errorHandler, "Button", "Click", "download_map", 1);
+	  
+	   if(window.ga){
+			window.ga.trackView("#Download-Map");
+		}
 	   
+	
 	   var fileTransfer = new FileTransfer();
 	   var uri = encodeURI(BACK_END_SERVER+"/mapas_api/getkml/"+GEO_TABLE+"/"+data.friendly_url);
 	   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
@@ -189,7 +195,9 @@ function pagebeforecreate(){
 
    $("#gps").on('vclick',function(){
 	   
-	   gaPlugin.trackEvent( sucessHandler, errorHandler, "Button", "Click", "gps", 1);
+	  if(window.ga){
+			window.ga.trackView("#Gps-Position");
+	   }
 	   
 	   muestraLoading(true);
 		  
@@ -227,12 +235,17 @@ function pagebeforecreate(){
 
    $("#fav").on('vclick',function(){
 	 var tag = "fav_button" + "?q="+ data.friendly_url;
-	 gaPlugin.trackEvent( sucessHandler, errorHandler, "Button", "Click", tag , 1);
+	 
+	 if(window.ga){
+		 window.ga.trackView("#fav:"+tag);
+	 }
 	 setFav($(this));
    });
 
    $("#fav2").on('vclick',function(){
-	    gaPlugin.trackEvent( sucessHandler, errorHandler, "Button", "Click", "fav2_button", 1);
+	   if(window.ga){
+			 window.ga.trackView("#unfav");
+		 }
 		setFav(null);
     });
 
