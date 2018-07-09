@@ -23,7 +23,7 @@ function pagebeforecreate(){
    		if(window.ga){
    			window.ga.trackView("#WhatsApp-Share");
    		}
-	    var msg = downloadHikingTrailsAt+" http://www.buscamapas.com/"+appTitle;
+	    var msg = downloadHikingTrailsAt+" https://www.buscamapas.com/"+appTitle;
 	    var msgurl = encodeURIComponent(msg);
 	    try{
 	    	window.location = "whatsapp://send?text="+msgurl;
@@ -256,9 +256,7 @@ function pagebeforecreate(){
 		  return false;
    });
 
-	$("body>[data-role='panel']").panel();
-
-		txtInitialized = true;
+	txtInitialized = true;
 }//pagebeforecreate
 
 function initSearchMaps(){

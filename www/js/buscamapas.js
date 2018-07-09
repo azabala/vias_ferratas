@@ -1499,7 +1499,7 @@ function initAd(){
 }
 
 function shareOnWhatsapp(){
-	var msg = takeAlookAt +" http://www.buscamapas.com/mapas/"+GEO_TABLE+"/"+data.friendly_url;
+	var msg = takeAlookAt +" https://www.buscamapas.com/mapas/"+GEO_TABLE+"/"+data.friendly_url;
 	var msgurl = encodeURIComponent(msg);
 	
 	var whatsappurl = "whatsapp://send?text="+msgurl;

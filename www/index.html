@@ -98,6 +98,7 @@ var app = {
 	    	try{
 	    		initTextsAndBgImages();
 	    		onDeviceReady();
+	    		$("body>[data-role='panel']").panel();
 	    		initAd();
 				navigator.splashscreen.hide();
 				
@@ -699,6 +700,9 @@ MENUS
 			   class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline"
 			   data-i18n>app.close</a>
 	</div>
+	
+	
+	
 	
 	<div data-role="panel" 
 		 id="menu_panel" 
