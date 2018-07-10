@@ -74,6 +74,8 @@ function pagebeforecreate(){
 			window.ga.trackView("#Download-Map");
 		}
 	   
+	   testInterstitial();
+	   
 	
 	   var fileTransfer = new FileTransfer();
 	   var uri = encodeURI(BACK_END_SERVER+"/mapas_api/getkml/"+GEO_TABLE+"/"+data.friendly_url);
@@ -370,6 +372,9 @@ function resetFilters(){
 
 
 function initSearchMapsResults(){	
+	
+	testInterstitial();
+	
 	muestraLoading(true);
 	var resultsListView = $('#maps-results');
 	
@@ -666,7 +671,7 @@ function mapsAroundResults(){
 			html: ''
 		});
 
-		
+		testInterstitial();
 		
 	    navigator.geolocation.getCurrentPosition(
   			    function(position) {
@@ -872,11 +877,22 @@ function mapsAroundResults(){
 	}//if navigator.geolocation;	
 }
 
+
+function testInterstitial(){
+	num_interstitial++;
+	if(num_interstitial == 0 
+		|| 	num_interstitial == 5
+		|| num_interstitial == 12
+		|| num_interstitial == 20
+	){
+	 	window.plugins.AdMob.createInterstitialView();
+	 }
+}
+
 function showMapPage(){ 
 	 num_map_views++;
 	 
-	// if(num_map_views % 7 == 0)
-	 //	window.plugins.AdMob.createInterstitialView();
+	 testInterstitial();
 	 
 	 if(map)
 		map.invalidateSize(true);
