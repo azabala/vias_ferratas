@@ -875,9 +875,9 @@ function mapsAroundResults(){
 
 function testInterstitial(){
 	
-	if(num_interstitial == 0 
-		|| 	num_interstitial == 5
-		|| num_interstitial == 12
+	if(num_interstitial == 2 
+		|| 	num_interstitial == 8
+		|| num_interstitial == 14
 		|| num_interstitial == 20
 	){
 	 	window.plugins.AdMob.createInterstitialView();
