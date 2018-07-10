@@ -97,7 +97,7 @@ var BACK_END_SERVER = 'https://www.buscamapas.com';
 
 var GEO_TABLE = 'rutas_mtb';
 
-var depago = false;
+var depago = true;
 
 
 var app = {
@@ -115,8 +115,7 @@ var app = {
 	    	try{
 	    		initTextsAndBgImages();
 	    		onDeviceReady();
-	    		$("#menu_panel").enhanceWithin().panel();
-	    		//$("body>[data-role='panel']").enhanceWithin().panel();
+	    		$("#menu_panel").panel();
 	    		initAd();
 				navigator.splashscreen.hide();
 				
