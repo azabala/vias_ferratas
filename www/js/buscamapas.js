@@ -1473,6 +1473,8 @@ function dismiss(){
 
 function initAd(){
 	
+	alert("La app es de pago = "+depago);
+	
 	if(depago)
 		return;
 	
