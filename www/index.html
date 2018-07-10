@@ -97,7 +97,7 @@ var BACK_END_SERVER = 'https://www.buscamapas.com';
 
 var GEO_TABLE = 'rutas_mtb';
 
-var depago = true;
+var depago = false;
 
 
 var app = {
@@ -207,7 +207,8 @@ function init(){
 						<li data-icon="false"><a href="#main-menu" id="home-button-menu" data-theme="c" data-i18n>app.home</a></li>
 						<li data-icon="false"><a href="#about_us" id="about-button-menu" data-theme="c" data-i18n>app.about</a></li>
 					</ul>
-					<a id="close_map_panel" data-rel="close" data-icon="delete" data-i18n>app.close</a>	
+					<a class="ui-btn  ui-corner-all ui-shadow"
+					id="close_map_panel" data-role="button" data-rel="close" data-icon="delete" data-i18n>app.close</a>		
 		</div><!-- /panel -->	
          	
 	<!--  
@@ -330,6 +331,21 @@ function init(){
 				data-inset='true'>
 			</ul>
 		</div>
+		
+		<!-- 
+		<div data-role="footer" data-position="fixed" data-fullscreen="true">
+			<div>
+				<a href="#description" 
+					id="save_favs"
+					data-role="button" 
+					data-inline="true"	
+					class="large_button"
+					style="background: green; color: white;"></a> 
+				
+		
+			</div>
+		</div>
+		 -->
 	</div>
 	
 	
