@@ -14,6 +14,11 @@ function pagebeforecreate(){
 		return false;
 	});
 	
+	$("#menu-button").on('vclick', function(){
+		$('#map_panel').panel( "open" );
+		return false;
+	});
+	
 	
    	$("#whatsapp").on('vclick',function(){
 	   shareOnWhatsapp();
