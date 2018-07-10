@@ -14,11 +14,6 @@ function pagebeforecreate(){
 		return false;
 	});
 	
-	$("#menu-button").on('vclick', function(){
-		$('#map_panel').panel( "open" );
-		return false;
-	});
-	
 	
    	$("#whatsapp").on('vclick',function(){
 	   shareOnWhatsapp();
@@ -879,7 +874,7 @@ function mapsAroundResults(){
 
 
 function testInterstitial(){
-	num_interstitial++;
+	
 	if(num_interstitial == 0 
 		|| 	num_interstitial == 5
 		|| num_interstitial == 12
@@ -887,6 +882,7 @@ function testInterstitial(){
 	){
 	 	window.plugins.AdMob.createInterstitialView();
 	 }
+	num_interstitial++;
 }
 
 function showMapPage(){ 
