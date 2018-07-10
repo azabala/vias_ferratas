@@ -1473,6 +1473,9 @@ function dismiss(){
 
 function initAd(){
 	
+	if(depago)
+		return;
+	
 	if ( window.plugins && window.plugins.AdMob ) {
 	    var ad_units = {
 			android : {

@@ -874,6 +874,8 @@ function mapsAroundResults(){
 
 
 function testInterstitial(){
+	if(depago)
+		return;
 	
 	if(num_interstitial == 2 
 		|| 	num_interstitial == 8
@@ -882,6 +884,9 @@ function testInterstitial(){
 		|| num_interstitial == 40
 		|| num_interstitial == 60
 		|| num_interstitial == 80
+		|| num_interstitial == 100
+		|| num_interstitial == 120
+		|| num_interstitial == 140
 	){
 	 	window.plugins.AdMob.createInterstitialView();
 	 }

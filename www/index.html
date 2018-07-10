@@ -33,7 +33,7 @@
 }
 </style>
 
-<title>Vías Ferratas</title>
+<title>Rutas MTB</title>
 
 <script src="cordova.js"></script>
 <script src="./js/jquery-2.1.4.min.js"></script>
@@ -82,11 +82,6 @@
  
  */
 
-
-
-
-
-
 //ios no gestiona los enlaces geo:
 var isIOS = false;
 
@@ -99,7 +94,10 @@ var num_map_views = 0;
 var num_interstitial = 0;
 
 var BACK_END_SERVER = 'https://www.buscamapas.com';
+
 var GEO_TABLE = 'rutas_mtb';
+
+var depago = false;
 
 
 var app = {
@@ -201,14 +199,11 @@ function init(){
 		<div data-role="panel" id="menu_panel">
 					<h2 id="map_panel_general_title" data-i18n>app.general</h2>
 					<ul data-role="listview" id="map_panel_listview" data-inset="true" >
-						<li><a href="#main-menu" id="home-button-menu" data-theme="c" data-i18n>app.home</a></li>
-						<li><a href="#about_us" id="about-button-menu" data-theme="c" data-i18n>app.about</a></li>
+						<li data-icon="false"><a href="#main-menu" id="home-button-menu" data-theme="c" data-i18n>app.home</a></li>
+						<li data-icon="false"><a href="#about_us" id="about-button-menu" data-theme="c" data-i18n>app.about</a></li>
 					</ul>
 					<a id="close_map_panel" data-rel="close" data-icon="delete" data-i18n>app.close</a>	
 		</div><!-- /panel -->	
-		
-		 
-					
          	
 	<!--  
 	********************************
@@ -344,7 +339,7 @@ function init(){
 			<a data-icon="arrow-l" data-iconpos="notext" id="back-button"
 				data-theme="c" data-rel="back" class="large_button"></a>
 			<h2 id="map-title" style="white-space: normal;"></h2>
-			<a href="#map_panel" data-icon="bars" data-iconpos="notext"
+			<a href="#menu_panel" data-icon="bars" data-iconpos="notext"
 				id="menu-button" data-theme="c" class="ui-btn-right large_button"></a>
 		</div>
 		<div role="main" class="ui-content"
