@@ -877,8 +877,11 @@ function testInterstitial(){
 	
 	if(num_interstitial == 2 
 		|| 	num_interstitial == 8
-		|| num_interstitial == 14
-		|| num_interstitial == 20
+		|| num_interstitial == 16
+		|| num_interstitial == 26
+		|| num_interstitial == 40
+		|| num_interstitial == 60
+		|| num_interstitial == 80
 	){
 	 	window.plugins.AdMob.createInterstitialView();
 	 }

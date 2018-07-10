@@ -199,17 +199,22 @@ function init(){
 			
 			
 				<div data-role="panel" id="menu_panel">
-					<ul data-role="listview">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="About.html">About</a></li>
+					<h2 id="map_panel_general_title" data-i18n>app.general</h2>
+					<ul data-role="listview" id="map_panel_listview" data-inset="true" >
+						<li><a href="#main-menu" id="home-button-menu" data-theme="c" data-i18n>app.home</a></li>
+						<li><a href="#about_us" id="about-button-menu" data-theme="c" data-i18n>app.about</a></li>
 					</ul>
+					<a id="close_map_panel" data-rel="close" data-icon="delete" data-i18n>app.close</a>
+						
+						
+						
 				</div><!-- /panel -->		
 			
 		</div>
 		
-		
-		
-		
+		 
+					
+         	
 	<!--  
 	********************************
 	Pantalla de busqueda por texto
