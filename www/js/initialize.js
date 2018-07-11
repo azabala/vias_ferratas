@@ -92,7 +92,6 @@ function pagebeforecreate(){
 					   $.mobile.loading( 'hide' );
 				   }, function(){
 					   var fileTransfer = new FileTransfer();
-					   alert(store+ "existe");
 				       fileTransfer.download(uri,store + data.friendly_url + ".kml",
 	                			function(theFile) {
 	                    			alert(theFile.toURI()+": "+download_finished);
