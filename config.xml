@@ -20,8 +20,8 @@
     
     <icon src="res/icon.png" />
     
-	<gap:splash src="res/splash.png" />
-	<gap:splash src="res/xhdpi.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />
+	<splash src="res/splash.png" />
+	<splash src="res/xhdpi.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />
 	
    <!--
    <platform name="android"> 
