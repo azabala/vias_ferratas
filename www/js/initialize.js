@@ -86,7 +86,8 @@ function pagebeforecreate(){
 				
 				   //store = cordova.file.externalDataDirectory + "/kml/";
 				   //store = "cdvfile://localhost/persistent/kml/";
-				   store = "cdvfile://localhost/persistent/Download/";
+				   //store = "cdvfile://localhost/persistent/Download/";
+				   store = cordova.file.dataDirectory + "/Download/";
 				   window.resolveLocalFileSystemURL(store + data.friendly_url, function(){
 					   alert(data.friendly_url+" "+already_exists);
 					   $.mobile.loading( 'hide' );
