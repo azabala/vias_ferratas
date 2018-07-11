@@ -125,6 +125,7 @@ function pagebeforecreate(){
 				   permissions.requestPermission(perm_list,
 				  			 function(status){
 					   			//permisos concedidos
+					   			alert(JSON.stringify(status));
 					              if( status.hasPermission ) {
 									   window.resolveLocalFileSystemURL(store + data.friendly_url, 
 											   function(){
