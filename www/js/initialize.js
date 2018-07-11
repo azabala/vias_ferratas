@@ -118,7 +118,7 @@ function pagebeforecreate(){
 				   store = cordova.file.externalRootDirectory + 'Download/';
 				   
 				   let permissions = cordova.plugins.permissions;
-				   permissions.checkPermission(permissions.READ_EXTERNAL_STORAGE, 
+				   permissions.checkPermission(permissions.WRITE_EXTERNAL_STORAGE, 
 				  			 function(status){
 					   			//permisos concedidos
 					              if( status.hasPermission ) {
