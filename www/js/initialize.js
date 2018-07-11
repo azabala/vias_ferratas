@@ -1,3 +1,58 @@
+function errorHandler(e) {
+	   var msg = '';
+	   switch (e.code) {
+	     case FileError.QUOTA_EXCEEDED_ERR:
+	       msg = 'QUOTA_EXCEEDED_ERR';
+	       break;
+	     case FileError.NOT_FOUND_ERR:
+	       msg = 'NOT_FOUND_ERR';
+	       break;
+	     case FileError.SECURITY_ERR:
+	       msg = 'SECURITY_ERR';
+	       break;
+	     case FileError.INVALID_MODIFICATION_ERR:
+	       msg = 'INVALID_MODIFICATION_ERR';
+	       break;
+	     case FileError.INVALID_STATE_ERR:
+	       msg = 'INVALID_STATE_ERR';
+	       break;
+	     default:
+	       msg = 'Unknown Error';
+	       break;
+	   };
+	   alert(e.source+" "+e.target+" "+msg);
+	   $.mobile.loading( 'hide' );
+	 }
+
+
+function descargaKml(uri, store, data){
+
+	var fileTransfer = new FileTransfer();
+	fileTransfer.download(uri,store + data.friendly_url + ".kml",
+	                	function(theFile) {
+	                    			alert(theFile.toURI()+": "+download_finished);
+	                    			$.mobile.loading( 'hide' );
+	                    			cordova.plugins.fileOpener2.open(
+	                    				    theFile.toURI(),
+	                    				    'application/vnd.google-earth.kml+xml', 
+	                    				    { 
+	                    				        error : function(e) { 
+	                    				            //alert('Error status: ' + e.status + ' - Error message: ' + e.message);
+	                    				      },
+	                    				        success : function () {
+	                    				            //alert('file opened successfully');                
+	                    				        }
+	                    				    }
+	                    		    );
+	                	},
+	                	errorHandler
+	 );
+
+}//descargaKml
+
+
+
+
 function pagebeforecreate(){
 	if(txtInitialized)
 		return;
@@ -36,31 +91,7 @@ function pagebeforecreate(){
 	   shareOnWhatsapp();
      });
    
-	 function errorHandler(e) {
-	   var msg = '';
-	   switch (e.code) {
-	     case FileError.QUOTA_EXCEEDED_ERR:
-	       msg = 'QUOTA_EXCEEDED_ERR';
-	       break;
-	     case FileError.NOT_FOUND_ERR:
-	       msg = 'NOT_FOUND_ERR';
-	       break;
-	     case FileError.SECURITY_ERR:
-	       msg = 'SECURITY_ERR';
-	       break;
-	     case FileError.INVALID_MODIFICATION_ERR:
-	       msg = 'INVALID_MODIFICATION_ERR';
-	       break;
-	     case FileError.INVALID_STATE_ERR:
-	       msg = 'INVALID_STATE_ERR';
-	       break;
-	     default:
-	       msg = 'Unknown Error';
-	       break;
-	   };
-	   alert(e.source+" "+e.target+" "+msg);
-	   $.mobile.loading( 'hide' );
-	 }
+	 
 
 
    $("#download").on('vclick',function(){ 
@@ -71,7 +102,6 @@ function pagebeforecreate(){
 	   
 	   testInterstitial();
 	   
-	
 	   var fileTransfer = new FileTransfer();
 	   var uri = encodeURI(BACK_END_SERVER+"/mapas_api/getkml/"+GEO_TABLE+"/"+data.friendly_url);
 	   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
@@ -84,94 +114,35 @@ function pagebeforecreate(){
 						html: ''
 					});
 				
-				   //store = cordova.file.externalDataDirectory + "/kml/";
-				   //store = "cdvfile://localhost/persistent/kml/";
-				   //store = "cdvfile://localhost/persistent/Download/";
-				   //store = "file:///storage/emulated/0/Download";
-				   
 				   
 				   store = cordova.file.externalRootDirectory + 'Download/';
-				   window.resolveLocalFileSystemURL(store + data.friendly_url, function(){
-					   alert(data.friendly_url+" "+already_exists);
-					   $.mobile.loading( 'hide' );
-				   }, function(){
-					   var fileTransfer = new FileTransfer();
-				       fileTransfer.download(uri,store + data.friendly_url + ".kml",
-	                		  function(theFile) {
-	                    			alert(theFile.toURI()+": "+download_finished);
-	                    			$.mobile.loading( 'hide' );
-	                    			cordova.plugins.fileOpener2.open(
-	                    				    theFile.toURI(), // You can also use a Cordova-style file uri: cdvfile://localhost/persistent/Download/starwars.pdf
-	                    				    'application/vnd.google-earth.kml+xml', 
-	                    				    { 
-	                    				        error : function(e) { 
-	                    				            //alert('Error status: ' + e.status + ' - Error message: ' + e.message);
-	                    				        },
-	                    				        success : function () {
-	                    				            //alert('file opened successfully');                
-	                    				        }
-	                    				    }
-	                    		    );
-	                			},
-	                			function(e){
-	                				   var msg = 'Error al descargar: ';
-									   switch (e.code) {
-									     case FileError.QUOTA_EXCEEDED_ERR:
-									       msg += 'QUOTA_EXCEEDED_ERR';
-									       break;
-									     case FileError.NOT_FOUND_ERR:
-									       msg += 'NOT_FOUND_ERR';
-									       break;
-									     case FileError.SECURITY_ERR:
-									       msg += 'SECURITY_ERR';
-									       break;
-									     case FileError.INVALID_MODIFICATION_ERR:
-									       msg += 'INVALID_MODIFICATION_ERR';
-									       break;
-									     case FileError.INVALID_STATE_ERR:
-									       msg += 'INVALID_STATE_ERR';
-									       break;
-									     default:
-									       msg += 'Unknown Error';
-									       break;
-									   };
-									   alert(e.source+" "+e.target+" "+msg);
-									   $.mobile.loading( 'hide' );
-	                			
-	                			}
-	            		);
-				   });					  
-		}, 	function(e){
-	                				   var msg = 'No existe  '+store + data.friendly_url;
-									   switch (e.code) {
-									     case FileError.QUOTA_EXCEEDED_ERR:
-									       msg += 'QUOTA_EXCEEDED_ERR';
-									       break;
-									     case FileError.NOT_FOUND_ERR:
-									       msg += 'NOT_FOUND_ERR';
-									       break;
-									     case FileError.SECURITY_ERR:
-									       msg += 'SECURITY_ERR';
-									       break;
-									     case FileError.INVALID_MODIFICATION_ERR:
-									       msg += 'INVALID_MODIFICATION_ERR';
-									       break;
-									     case FileError.INVALID_STATE_ERR:
-									       msg += 'INVALID_STATE_ERR';
-									       break;
-									     default:
-									       msg += 'Unknown Error';
-									       break;
-									   };
-									   alert(e.source+" "+e.target+" "+msg);
-									   $.mobile.loading( 'hide' );
-	                			
-	        }
+				   
+				   let permissions = cordova.plugins.permissions;
+				   permissions.checkPermission(permissions.READ_EXTERNAL_STORAGE, 
+				  			 function(status){
+					   			//permisos concedidos
+					              if( status.hasPermission ) {
+									   window.resolveLocalFileSystemURL(store + data.friendly_url, 
+											   function(){
+										   			alert(data.friendly_url+" "+already_exists);
+										   			$.mobile.loading( 'hide' );
+									   			}, 
+									   			function(){
+									   				descargaKml(uri, store, data);
+									   			}
+									   );	
+					              }else
+					            	  alert("No has dado permisos a la app para descargar ficheros");
+					   
+	 			   			 }, function(){
+				  				 //permisos denegados
+	 			   				 
+	 			   				 alert("No has dado permisos a la app para descargar ficheros");
+				  			 });	   				  
+		}, 	
+		errorHandler//onFileSystemFail
 		
-		
-		
-		
-		);//requestFileSystem
+	 );//requestFileSystem
 		
    });
    
