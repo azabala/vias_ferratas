@@ -19,12 +19,27 @@
     <access origin="*" />
     
     <icon src="res/icon.png" />
+    <!--
 	<gap:splash src="res/splash.png" />
 	<gap:splash src="res/xhdpi.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />
+	-->
 	
+	 <preference name="show-splash-screen-spinner" value="true" />
+     <preference name="auto-hide-splash-screen" value="true" />
+     <preference name="SplashScreen" value="splash" />
+     <preference name="SplashScreenDelay" value="3000" />
+     <preference name="ShowSplashScreenSpinner" value="true"/>
    
-   <platform name="android">
-    <splash src="res/xhdpi.png" />
+   <platform name="android"> 
+    	<splash src="res/splash.png" density="land-hdpi"/>
+    	<splash src="res/splash.png density="land-ldpi"/>
+    	<splash src="res/splash.png density="land-mdpi"/>
+    	<splash src="res/splash.png density="land-xhdpi"/>
+
+    	<splash src="res/splash.png density="port-hdpi"/>
+    	<splash src="res/splash.png density="port-ldpi"/>
+    	<splash src="res/splash.png density="port-mdpi"/>
+    	<splash src="res/splash.png density="port-xhdpi"/>
 	</platform>
    
    
@@ -63,12 +78,7 @@
      <preference name="detect-data-types" value="true" />
      <preference name="exit-on-suspend" value="false" />
      
-     <preference name="show-splash-screen-spinner" value="true" />
-     <preference name="auto-hide-splash-screen" value="true" />
-     <preference name="SplashScreen" value="splash" />
-     <preference name="SplashScreenDelay" value="3000" />
-     <preference name="ShowSplashScreenSpinner" value="true"/>
-     
+  
      
      <preference name="disable-cursor" value="false" />
      <preference name="android-targetSdkVersion" value="26" />
