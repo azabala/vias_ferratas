@@ -24,11 +24,7 @@
 	<gap:splash src="res/xhdpi.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />
 	-->
 	
-	 <preference name="show-splash-screen-spinner" value="true" />
-     <preference name="auto-hide-splash-screen" value="true" />
-     <preference name="SplashScreen" value="splash" />
-     <preference name="SplashScreenDelay" value="3000" />
-     <preference name="ShowSplashScreenSpinner" value="true"/>
+	
    
    <platform name="android"> 
     	<splash src="res/splash.png" density="land-hdpi"/>
@@ -97,6 +93,11 @@
 	 <preference name="AndroidExtraFilesystems" value="files,cache, sdcard, cache-external, files-external, documents, assets, root" />
      <preference name='pgb-builder-version' value='2' />
      
+     <preference name="show-splash-screen-spinner" value="true" />
+     <preference name="auto-hide-splash-screen" value="true" />
+     <preference name="SplashScreen" value="splash" />
+     <preference name="SplashScreenDelay" value="3000" />
+     <preference name="ShowSplashScreenSpinner" value="true"/>
      
      <!--
 	 Google Analytics plugin
