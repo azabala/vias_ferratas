@@ -72,7 +72,7 @@
      <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 	 <preference name="AndroidExtraFilesystems" value="files,cache, sdcard, cache-external, files-external" />
      
-        
+     <preference name='pgb-builder-version' value='2' />
      
      
      <!--
@@ -96,6 +96,11 @@
      <feature name="FileOpener2">
          <param name="android-package" value="io.github.pwlin.cordova.plugins.fileopener2.FileOpener2" />
       </feature>
+      
+      <resource-file src="res/values/strings.xml" target="res/values/strings.xml" />  
+      <resource-file src="res/values/version.xml" target="res/values/version.xml" />  
+      <resource-file src="res/values-en/strings.xml" target="res/values-en/strings.xml" />  
+      <resource-file src="res/values-en/version.xml" target="res/values-en/version.xml" />  
   
       
 </widget>
