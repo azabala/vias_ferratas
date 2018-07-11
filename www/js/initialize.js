@@ -93,7 +93,7 @@ function pagebeforecreate(){
 				   }, function(){
 					   var fileTransfer = new FileTransfer();
 				       fileTransfer.download(uri,store + data.friendly_url + ".kml",
-	                			function(theFile) {
+	                		  function(theFile) {
 	                    			alert(theFile.toURI()+": "+download_finished);
 	                    			$.mobile.loading( 'hide' );
 	                    			cordova.plugins.fileOpener2.open(
