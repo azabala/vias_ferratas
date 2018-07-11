@@ -33,16 +33,17 @@
      <gap:plugin name="cordova-plugin-file" source="npm"  spec="4.0.0" />
      <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="1.6.3" />
      <gap:plugin name="cordova-plugin-file-opener2" source="npm" />
-      <gap:plugin name="cmt-cordova-plugin-webintent"  source="npm" />
+     <gap:plugin name="cmt-cordova-plugin-webintent"  source="npm" />
      
-          
+     <gap:plugin name="cordova-plugin-google-analytics" source="npm" spec="0.8.0" />
+     <gap:plugin name="cordova-plugin-admob"  source="npm" spec="3.2.4" />
+      
+       
      
      <plugin name="cordova-plugin-whitelist" source="npm"  version="1.3.1" />
      <allow-navigation href="*" />
      
-     <gap:plugin name="cordova-plugin-google-analytics" source="npm" spec="0.8.0" />
-     <gap:plugin name="cordova-plugin-admob"  source="npm" spec="3.2.4" />
-       <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="1.4.0" />
+     
      
      <preference name="orientation" value="default" />
      <preference name="target-device" value="universal" />
@@ -70,8 +71,7 @@
     
      
      <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-	 <preference name="AndroidExtraFilesystems" value="files,cache, sdcard, cache-external, files-external" />
-     
+	 <preference name="AndroidExtraFilesystems" value="files,cache, sdcard, cache-external, files-external, documents, assets, root" />
      <preference name='pgb-builder-version' value='2' />
      
      
@@ -91,7 +91,7 @@
          <param name="android-package" value="com.rjfun.cordova.plugin.AdMob"/>
       </feature>
       
-      <feature name="http://api.phonegap.com/1.0/file"/>
+     <feature name="http://api.phonegap.com/1.0/file"/>
      <feature name="http://api.phonegap.com/1.0/file-transfer" />
      <feature name="FileOpener2">
          <param name="android-package" value="io.github.pwlin.cordova.plugins.fileopener2.FileOpener2" />
