@@ -19,13 +19,10 @@
     <access origin="*" />
     
     <icon src="res/icon.png" />
-    <!--
+    
 	<gap:splash src="res/splash.png" />
 	<gap:splash src="res/xhdpi.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />
-	-->
 	
-	
-   
    <platform name="android"> 
     	<splash src="res/splash.png" density="land-hdpi"/>
     	<splash src="res/splash.png density="land-ldpi"/>
