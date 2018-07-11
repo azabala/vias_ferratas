@@ -118,14 +118,14 @@ function pagebeforecreate(){
 				   store = cordova.file.externalRootDirectory + 'Download/';
 				   
 				   let permissions = cordova.plugins.permissions;
-				   var perm_list = [
-				               permissions.WRITE_EXTERNAL_STORAGE,
-				               permissions.READ_EXTERNAL_STORAGE
-				    ];
-				   permissions.requestPermission(perm_list,
+				   //var perm_list = [
+				   //            permissions.WRITE_EXTERNAL_STORAGE,
+				   //            permissions.READ_EXTERNAL_STORAGE
+				   // ];
+				   permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE,
 				  			 function(status){
 					   			//permisos concedidos
-					   			alert(JSON.stringify(status));
+					   			//alert(JSON.stringify(status));
 					              if( status.hasPermission ) {
 									   window.resolveLocalFileSystemURL(store + data.friendly_url, 
 											   function(){
