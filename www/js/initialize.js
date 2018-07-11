@@ -109,7 +109,7 @@ function pagebeforecreate(){
 	                    				    }
 	                    		    );
 	                			},
-	                			function(){
+	                			function(e){
 	                				   var msg = 'Error al descargar: ';
 									   switch (e.code) {
 									     case FileError.QUOTA_EXCEEDED_ERR:
