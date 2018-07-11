@@ -122,7 +122,7 @@ function pagebeforecreate(){
 				               permissions.WRITE_EXTERNAL_STORAGE,
 				               permissions.READ_EXTERNAL_STORAGE
 				    ];
-				   permissions.checkPermission(perm_list, 
+				   permissions.checkPermission( 
 				  			 function(status){
 					   			//permisos concedidos
 					              if( status.hasPermission ) {
@@ -142,7 +142,7 @@ function pagebeforecreate(){
 				  				 //permisos denegados
 	 			   				 
 	 			   				 alert("No has dado permisos a la app para descargar ficheros");
-				  			 });	   				  
+				  			 }, perm_list);	   				  
 		}, 	
 		errorHandler//onFileSystemFail
 		
