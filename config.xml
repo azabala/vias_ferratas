@@ -1,18 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget 
-	id="com.buscamapas.rutas_mtb" 
-	version="1.0.4" 
-	xmlns="http://www.w3.org/ns/widgets" 
-	xmlns:gap="http://phonegap.com/ns/1.0">
-	
-    <name>Rutas MTB</name>
-    <description>
-       'Rutas Mtb' es una app que te permite acceder a más de 185.000 rutas de mountain bike repartidas por todo el mundo. Podrás descargar tracks a tu dispositivo en formato 'kml' y seguirlos montado en tu bici con los principales navegadores GPS (OruxMaps, Google Maps, etc), siempre con la cartografía de fondo de Open Street Map. En breve podrás ver panorámicas y fotografías de las zonas que estás visualizando en el mapa.
-    </description>
-    
-    <author email="buscamapas.com@gmail.com" href="http://www.buscamapas.com/rutas-mtb">
-        buscamapas.com - Rutas MTB 
-    </author>
+<widget id="com.buscamapas.rutas_senderismo_sin_publicidad" 
+		version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<name>Rutas Senderismo Donar</name>
+<description>
+	Versión sin publicidad de la app 'Rutas Senderismo'.
+    'Rutas de Senderismo' es una app que te permite acceder a más de 150.000 rutas de senderismo repartidas por todo el mundo. Podrás descargar mapas a tu dispositivo en formato 'kml' y navegar con los principales navegadores GPS(OruxMaps, Google Maps, etc), siempre con la cartografía de fondo de Open Street Map. En breve podrás ver panorámicas y fotografías de las zonas que estás visualizando en el mapa.
+</description>
+<author email="buscamapas.com@gmail.com" href="http://www.buscamapas.com/rutas-senderismo">
+    buscamapas.com - Rutas de Senderismo (Hiking Trails)
+</author>
 
 
     <content src="index.html" />
