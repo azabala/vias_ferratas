@@ -1018,8 +1018,11 @@ function showMapDescription(){
 	
 	ajaxRequest.then( function (response) {
 		
-		descriptionText = $(response.responseText).find('#description').text();
-		description.html(descriptionText).show();
+		descriptionText = $(response.responseText).find('#description').html();
+		
+		commentsText = $(response.responseText).find('#comments').html();
+		
+		description.html("<h3>Descripción de la ruta</h3>"+descriptionText+commentsText).show();
 		muestraLoading(false);
 		
 	});
