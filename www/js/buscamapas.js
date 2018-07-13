@@ -401,7 +401,7 @@ function onDeviceReady(){
 
 
 	
-	$(document).on( "pagebeforeshow", "#description", function(e,_data) {
+	$(document).on( "pageshow", "#description", function(e,_data) {
 		showMapDescription();	  
 	});
 
