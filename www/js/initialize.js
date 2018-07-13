@@ -1017,6 +1017,8 @@ function showMapDescription(){
 	});
 	
 	ajaxRequest.then( function (response) {
+		
+		alert(response.responseText);
 		var response_html = $.parseHTML(response.responseText);
 		descriptionText = $(response_html).find('#description').html();
 		
