@@ -1003,9 +1003,31 @@ function showMapDescription(){
 	}
 	
 	$("#map-description").i18n();
-	var description = $('#description-body'); 
-	description.html(data.description);
+	var description = $('#description-body');
+	
+	muestraLoading(true);
+	//a ver si podemos sacar datos de wikiloc
+	//*******************************
+	//https://es.wikiloc.com/wikiloc/view.do?id=4472160
+	var aUrl = data.service_url;
+	var descriptionText = "";
+	
+	ajaxRequest = $.ajax({
+			url:aUrl 
+	});
+	
+	ajaxRequest.then( function (response) {
+		description.html(response.find("#description")).show();
+		muestraLoading(false);
+		
+	});
+	//*************************************
+	
+	//description.html(data.description);
 }
+
+
+
 
 function showElevationProfile(){
 	  paintGraph();
