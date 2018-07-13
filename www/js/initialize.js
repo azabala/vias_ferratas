@@ -1017,10 +1017,10 @@ function showMapDescription(){
 	});
 	
 	ajaxRequest.then( function (response) {
+		var response_html = $.parseHTML(response.responseText);
+		descriptionText = $(response_html).find('#description').html();
 		
-		descriptionText = $(response.responseText).find('#description').html();
-		
-		commentsText = $(response.responseText).find('#comments').html();
+		commentsText = $(response_html).find('#comments').html();
 		
 		description.html("<h3>Descripción de la ruta</h3>"+descriptionText+commentsText).show();
 		muestraLoading(false);
