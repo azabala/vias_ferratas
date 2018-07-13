@@ -1018,7 +1018,7 @@ function showMapDescription(){
 	
 	ajaxRequest.then( function (response) {
 		
-		descriptionText = $(respose.responseText).find('div.content').text();
+		descriptionText = $(response.responseText).find('#description').text();
 		description.html(descriptionText).show();
 		muestraLoading(false);
 		
