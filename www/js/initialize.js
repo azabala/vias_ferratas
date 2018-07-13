@@ -1016,10 +1016,10 @@ function showMapDescription(){
 			url:aUrl 
 	});
 	
-	ajaxRequest.then( function (response) {
+	ajaxRequest.then( function (data,  textStatus, jqXHR) {
 		
-		alert(response.responseText);
-		var response_html = $.parseHTML(response.responseText);
+		//alert(data);
+		var response_html = $.parseHTML(jqXHR.responseText);
 		descriptionText = $(response_html).find('#description').html();
 		
 		commentsText = $(response_html).find('#comments').html();
