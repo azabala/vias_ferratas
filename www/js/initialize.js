@@ -1011,18 +1011,29 @@ function showMapDescription(){
 	//https://es.wikiloc.com/wikiloc/view.do?id=4472160
 	var aUrl = data.service_url;
 	var descriptionText = "";
+	var commentsText = "";
 	
+
 	ajaxRequest = $.ajax({
 			url:aUrl 
 	});
-	
+
 	ajaxRequest.then( function (data,  textStatus, jqXHR) {
 		
 		//alert(data);
 		var response_html = $.parseHTML(jqXHR.responseText);
-		descriptionText = $(response_html).find('#description').html();
+
+		var desc = $(response_html).find('.description');
+
+
 		
-		commentsText = $(response_html).find('#comments').html();
+		if(desc.length > 0)
+			descriptionText = desc.html();
+		
+		comm = $(response_html).find('#comments');
+		if(comm.length > 0)
+			commentsText = comm.html();
+		
 		
 		description.html("<h3>Descripción de la ruta</h3>"+descriptionText+commentsText).show();
 		muestraLoading(false);
