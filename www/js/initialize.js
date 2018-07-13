@@ -1017,8 +1017,9 @@ function showMapDescription(){
 	});
 	
 	ajaxRequest.then( function (response) {
-		alert(response);
-		//description.html(response.find("#description")).show();
+		
+		descriptionText = $(respose.responseText).find('div.content').text();
+		description.html(descriptionText).show();
 		muestraLoading(false);
 		
 	});
