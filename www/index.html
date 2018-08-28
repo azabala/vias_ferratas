@@ -156,6 +156,7 @@ var app = {
 				var provider = new firebase.auth.GoogleAuthProvider();
 				
 				alert("vamos a autenticarnos con Google");
+				firebase.auth().signInWithRedirect(provider);
 				//autenticacion con Google a través de firebase
 				firebase.auth().getRedirectResult().then(function(result) {
 					  if (result.credential) {
