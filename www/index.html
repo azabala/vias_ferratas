@@ -153,7 +153,9 @@ var app = {
 					window.ga.startTrackerWithId('UA-56863485-1', 30);
 				}
 				
+				var provider = new firebase.auth.GoogleAuthProvider();
 				
+				alert("vamos a autenticarnos con Google");
 				//autenticacion con Google a través de firebase
 				firebase.auth().getRedirectResult().then(function(result) {
 					  if (result.credential) {
@@ -164,7 +166,8 @@ var app = {
 					    var user = result.user;
 					    
 					    alert("usuario:"+user);
-					  }
+					  }else
+						alert(result);
 				}).catch(function(error) {
 					  // Handle Errors here.
 					  var errorCode = error.code;
