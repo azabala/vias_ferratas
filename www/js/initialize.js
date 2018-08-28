@@ -1006,9 +1006,8 @@ function showMapDescription(){
 	var description = $('#description-body');
 	
 	muestraLoading(true);
-	//a ver si podemos sacar datos de wikiloc
-	//*******************************
-	//https://es.wikiloc.com/wikiloc/view.do?id=4472160
+	
+	
 	var aUrl = data.service_url;
 	var descriptionText = "";
 	var commentsText = "";

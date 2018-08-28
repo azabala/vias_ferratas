@@ -62,13 +62,23 @@
 <script  type="text/javascript" src="./js/jqplot.canvasTextRenderer.js"></script>
 <script  type="text/javascript" src="./js/jqplot.pointLabels.js"></script>
 
+<!-- firebase: google login, notificaciones push, etc. -->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+
+
+
+
+
+
+
+
 
 
 <script>
 
 /*
  * 
- 1. Arreglar el problema de los paneles.
+
  2. Dejar que se puedan guardar los favoritos
  (login con firebase, almacenamiento en la nube)
  3. Compartir favoritos por Whatsapp
@@ -79,9 +89,6 @@
  
  7. ¿Casas rurales con booking?
 		 
- 8. INformacion del mapa: escrapearla de wikiloc
- 
- 
  
  5 CHOLLOS EN TELEGRAM
  
@@ -106,6 +113,23 @@ var GEO_TABLE = 'rutas_senderismo';
 var depago = true;
 
 
+/*Inicializacion de firebase para Rutas Senderismo. 
+ * FIXME: Hay que crear una app firebase por cada "unidad logica". Luego, en la consola
+ de firebase, deja añadir diferentes APKs firmados (para tener version sin anuncios, con anuncios, etc)
+ */
+
+var config = {
+	    apiKey: "AIzaSyA312EvY7ZJ_C6T8Lwno5Lgc2MVctbvu20",
+	    authDomain: "rutas-outdoor-c6eb3.firebaseapp.com",
+	    databaseURL: "https://rutas-outdoor-c6eb3.firebaseio.com",
+	    projectId: "rutas-outdoor-c6eb3",
+	    storageBucket: "rutas-outdoor-c6eb3.appspot.com",
+	    messagingSenderId: "528471677088"
+};
+firebase.initializeApp(config);
+
+
+
 var app = {
 	    initialize: function() {
 	        this.bindEvents();
@@ -128,6 +152,30 @@ var app = {
 				if(window.ga){
 					window.ga.startTrackerWithId('UA-56863485-1', 30);
 				}
+				
+				
+				//autenticacion con Google a través de firebase
+				firebase.auth().getRedirectResult().then(function(result) {
+					  if (result.credential) {
+					    // This gives you a Google Access Token.
+					    // You can use it to access the Google API.
+					    var token = result.credential.accessToken;
+					    // The signed-in user info.
+					    var user = result.user;
+					    
+					    alert("usuario:"+user);
+					  }
+				}).catch(function(error) {
+					  // Handle Errors here.
+					  var errorCode = error.code;
+					  var errorMessage = error.message;
+					  
+					  alert (errCode + " "+errorMessage);
+				});
+				
+				
+				
+				
 				
 	    	  }catch(err){
 	    		  alert(err.message);
@@ -445,6 +493,7 @@ function init(){
 			<h3 id="description-body"></h3>
 		</div>
 	</div>
+	
 	
 	<!-- 
 	**********************************************
